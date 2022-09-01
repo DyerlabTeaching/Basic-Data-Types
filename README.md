@@ -1,23 +1,20 @@
-# Topic Title
+# Basic Data Types
 
 
 ## Impetus
 
-This is a description of the basic template file for a course component repository
+For us to be effective at analyzing a broad range of objects, we need to have appropriate representations of measurements and objects in the real world that we can use in our analyses.  
 
 ## Student Learning Objectives
 
 At the end of this topic, you should be able to:  
- - *Learning Objective 1* 
- - *Learning Objective 2*
- - *Learning Objective 3* 
+ - *Describe characteristics of numeric, character, logical, and date data types* 
+ - *Use introspection and coercion for basic data types*
+ - *Perform operations on included data types.* 
 
 ## Content
- - [Slides](slides.html)
- - [Narrative](narrative.html)
- - [In Class](in-class.html)
- - [Homework](homework.html)
- - Data Set
+ - [Slides](https://dyerlabteaching.github.io/basic-data-types/slides.html)
+ - [Narrative](https://dyerlabteaching.github.io/basic-data-types/narrative.html)
 
 ## Contact Information
 
