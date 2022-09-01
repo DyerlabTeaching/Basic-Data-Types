@@ -18,6 +18,20 @@ title-slide-attributes:
 ---
 
 
+## Basic Data Types
+
+There are several different data types in R, each of which represents some *identifiable* component in our analysis mileau.  For this quick lecture, we are going to focus on four of the most common types.
+
+::: {.incremental}
+- Numerical Data: Representing components as a measurable quantity.  
+- Character Data: Representations in textual values.  
+- Logical Data: `TRUE` or `FALSE` values.  
+- Dates: Dates and Time
+:::
+
+
+# Numerical Data {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
+
 ## Numerical Data
 
 Numerical data is the *most common* type of data that we will all be using.  In `R`, most computations use this type.
@@ -147,7 +161,7 @@ $ @	              | component / slot extraction
 
 
 
-# Introspection & Coercion {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
+
 
 ## Data Classes
 
@@ -373,6 +387,28 @@ as.logical( 323 )
 ```
 
 :::
+
+
+
+# Dates {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
+
+## What are Dates & Times
+
+## Helpful Library
+
+
+## Creating Dates
+
+## Printing Date Components
+
+## Date Operators
+
+
+## Extensions
+
+
+
+
 
 
 ## Bullets
