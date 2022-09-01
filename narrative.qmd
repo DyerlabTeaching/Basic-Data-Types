@@ -5,7 +5,10 @@ format:
     toc: true
 ---
 
+![Photo by <a href="https://unsplash.com/@matt_j_cand?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Matt J_Cand</a> on <a href="https://unsplash.com/t/wallpapers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](https://unsplash.com/photos/qP54ziIya4k/download?ixid=MnwxMjA3fDB8MXx0b3BpY3x8Ym84alFLVGFFMFl8fHx8fDJ8fDE2NjIwNTI2Nzk&force=true&w=1920)
+
 ```{r}
+#| echo: false
 library(emo)
 ```
 
@@ -242,7 +245,7 @@ str_split( corpus, pattern=" ", simplify=TRUE)
 
 which shows `r length(str_split( corpus, pattern=" ", simplify=TRUE))` words in the text.  
 
-<div class="box-yellow">I need to point out that I added the `simplify=TRUE` option to `str_split`.  Had I not done that, it would have returned a [list](../lists/narriative.nb.html) object that contained the individual vector of words. There are various reasons that it returns a list, none of which I can frankly understand, that is just the way the authors of the function made it.</div>
+I need to point out that I added the `simplify=TRUE` option to `str_split`.  Had I not done that, it would have returned a `list` object that contained the individual vector of words. There are various reasons that it returns a list, none of which I can frankly understand, that is just the way the authors of the function made it.
 
 ### Substrings
 
@@ -274,10 +277,113 @@ There is a lot more fun stuff to do with string based data.
 
 ## Logical Data
 
+
+Logical data consists of two **mutually exclusive** states: `TRUE` or `FALSE`
+
+&nbsp;
+
+```{r}
+dyer_has_good_jokes <- TRUE
+dyer_has_good_jokes
+```
+
+## Operators on Logical Types
+
+There are 3 primary logical operators that can be used on logical types; one unary and two binary.
+
+&nbsp;
+
+#### Unary Operator
+
+The `negation` operator
+```{r}
+!dyer_has_good_jokes
+```
+
+
+&nbsp;
+
+
+
+
+### The Binary Operators
+
+
+#### The OR operator
+
+```{r}
+TRUE | FALSE
+```
+
+#### The AND operator
+
+```{r}
+TRUE & FALSE
+```
+
+
+## Introspection
+
+`Logical` types have an introspection operator.
+
+&nbsp;
+
+```{r}
+is.logical( dyer_has_good_jokes )
+```
+
+
+
+## Coercion
+
+Coercion of something else to a `Logical` is more case-specific.
+
+From `character` data.  
+
+```{r}
+as.logical( "TRUE" )
+```
+
+&nbsp;
+
+```{r}
+as.logical( "FALSE" )
+```
+
+Other `character` types result in `NA` (missing data).
+
+```{r}
+as.logical( "Bob" )
+```
+
+
+## Coercion
+
+Coercion of something else to a `Logical` is more case-specific.
+
+&nbsp;
+
+From `numeric` data:  
+- Values of `0` are `FALSE`  
+- Non-zero values are `TRUE`  
+
+
+```{r}
+as.logical(0)
+```
+
+
+```{r}
+as.logical( 323 )
+```
+
+
+
+
+
+
+
 ## Dates
-
-
-
 
 > Time is the next dimension.
 
