@@ -287,7 +287,7 @@ dyer_has_good_jokes <- TRUE
 dyer_has_good_jokes
 ```
 
-## Operators on Logical Types
+### Operators on Logical Types
 
 There are 3 primary logical operators that can be used on logical types; one unary and two binary.
 
@@ -322,7 +322,7 @@ TRUE & FALSE
 ```
 
 
-## Introspection
+### Introspection
 
 `Logical` types have an introspection operator.
 
@@ -332,9 +332,6 @@ TRUE & FALSE
 is.logical( dyer_has_good_jokes )
 ```
 
-
-
-## Coercion
 
 Coercion of something else to a `Logical` is more case-specific.
 
@@ -357,7 +354,7 @@ as.logical( "Bob" )
 ```
 
 
-## Coercion
+### Coercion
 
 Coercion of something else to a `Logical` is more case-specific.
 
