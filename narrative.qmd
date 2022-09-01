@@ -1,20 +1,17 @@
 ---
-title: "Narrative Title"
+title: "Basic Data Types"
 format: html
 ---
 
-## Topic
+## Numerical Data
 
-Insert rationale for topic here.
+## Character Data
 
-## Data Types
+## Logical Data
 
-```{r}
-x <- rnorm(100)
-hist(x)
-```
+## Dates
 
-`This section is where you fill in all the information`
+
 
 ## Questions
 
