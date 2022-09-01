@@ -23,11 +23,26 @@ title-slide-attributes:
 There are several different data types in R, each of which represents some *identifiable* component in our analysis mileau.  For this quick lecture, we are going to focus on four of the most common types.
 
 ::: {.incremental}
+- Missing Data: The absence of anything.
 - Numerical Data: Representing components as a measurable quantity.  
 - Character Data: Representations in textual values.  
 - Logical Data: `TRUE` or `FALSE` values.  
 - Dates: Dates and Time
 :::
+
+
+# No Data {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
+
+## Missing Data
+
+The most basic type of data is the kind that does not exist.  In `R`, we represent this using the `NA` data type.  
+
+```{r}
+x <- NA
+x
+```
+
+
 
 
 # Numerical Data {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
@@ -307,11 +322,39 @@ y
 ```
 
 
+## Combination Operators
+
+There are many times that it helpful to combine more than one variable containing character data into a single variable.
+
+&nbsp; 
+
+```{r}
+firstName
+lastName <- "Dyer"
+```
+
+
+::: {.fragment}
+&nbsp;
+
+Using the `paste()` function.
+
+```{r}
+fullName <- paste( firstName, lastName)
+fullName
+class( fullName )
+```
+:::
+
+
+
+
+
 # Logical Data {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
 
 ## Logical Data
 
-Logical data consists of two states, `TRUE` and `FALSE`
+Logical data consists of two **mutually exclusive** states: `TRUE` or `FALSE`
 
 &nbsp;
 
@@ -320,9 +363,52 @@ dyer_has_good_jokes <- TRUE
 dyer_has_good_jokes
 ```
 
+## Operators on Logical Types
+
+There are 3 primary logical operators that can be used on logical types; one unary and two binary.
+
+&nbsp;
+
+::: {.fragment}
+
+#### Unary Operator
+
+The `negation` operator
+```{r}
+!dyer_has_good_jokes
+```
+:::
+
+&nbsp;
+
+
+::: {.fragment}
+
+### The Binary Operators
+
+::: {layout-ncol="2"}
+#### The OR operator
+
+```{r}
+TRUE | FALSE
+```
+
+#### The AND operator
+
+```{r}
+TRUE & FALSE
+```
+:::
+
+
+:::
+
+
 ## Introspection
 
 `Logical` types have an introspection operator.
+
+&nbsp;
 
 ::: {.fragment}
 ```{r}
@@ -394,92 +480,190 @@ as.logical( 323 )
 
 ## What are Dates & Times
 
+When we read textual representations of dates and times, we *intuitively* understand their representations.  So we know what 
+
+- February 3, 1996  
+- Tomorrow @ Noon
+- Next Thursday afternoon
+
+::: {.fragment}
+
+&nbsp;
+
+But for `R`, we need to be able to tell the computer what these sequences of characters mean in a way that they can understand that something like `03/01/22` means either March 1, 2022 (if you are in the US) or Januar 3, 2022 (if you are in Europe) and that intrinsic relationships between what a `March` and a `January` really mean.
+:::
+
+
+## {{< fa regular clock >}} Computer Time 
+
+Computers keep time as the number of seconds since the **epoch**, which is defined as `midnight on 1 January 1970`.
+
+&nbsp;
+
+
+::: {.fragment}
+
+You can have `R` ask your computer what the time is and it will give it to you in the format that your `locale` is set to (probably US-en).
+
+```{r}
+Sys.time()
+```
+:::
+
+
+::: {.fragment}
+
+&nbsp;
+
+But this is just a representation of the time for your geospatial position.  Internally, it 
+
+```{r}
+unclass( Sys.time())
+```
+:::
+
+
 ## Helpful Library
 
+There are a few `R` packages that deal with various issue about time as well as some built-in functionality.  I personally prefer to use the library `lubridate` because it is part of `tidyverse` and it is very easy to work with.
+
+Installing the library if you do not have it (this only need to be done once on your computer).
+
+```{r}
+#| eval: false
+install.packages("lubridate")
+```
+
+&nbsp;
+
+Then tell `R` you would like to use it.
+```{r}
+library( lubridate )
+```
 
 ## Creating Dates
 
-## Printing Date Components
+To create dates, we typically start with `character` representations of date and time objects.
+
+```{r}
+sep1 <- "9/1/22"
+class( sep1 )
+sep1
+```
+
+::: {.fragment }
+&nbsp;
+
+So this is a month/day/year format.   We can use the function `mdy()` and pass it the character representation of the date.
+
+```{r}
+today <- mdy( sep1 )
+class( today )
+today
+```
+:::
+
 
 ## Date Operators
 
+Things that are intrinsically "Date" objects have operators that can be used.  Examples include adding/subtracting days, determine day of the week, or the Julian day.
 
-## Extensions
-
-
-
-
-
-
-## Bullets
-
-When you click the **Render** button a document will be generated that includes:
-
--   Content authored with markdown
--   Output from executable code
-
-## Some Title
-
-::: {layout-ncol="2"}
-### List One
-
--   Item A
--   Item B
--   Item C
-
-### List Two
-
--   Item X
--   Item Y
--   Item Z
-:::
-
-## Another Slide
-
-::: {layout-ncol="2"}
-### The code
-
-```{r eval=FALSE, echo=TRUE}
-hist( rnorm(1200) )
-```
-
-### The Plot
-
-```{r echo=FALSE}
-hist( rnorm( 1200 ) )
-```
-:::
-
-## And another slide
-
-::: {layout-ncol="2"}
--   Item X
--   Item Y
--   Item Z
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa.
-:::
-
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r echo=TRUE}
-px <- 0.75
-py <- 0.25
-m <- 0.1
-ret <- rep(NA,100)
-ret[1] <- py
-for( i in 2:100) {
-  ret[i] <- (1-m)*ret[(i-1)] + px * m   
-}
-```
-
-## Results
+&nbsp; 
 
 ```{r}
-plot( ret, type="l")
+today - 1
 ```
+
+&nbsp;
+
+```{r}
+weekdays( today )
+```
+
+&nbsp;
+
+```{r}
+yday( today )
+```
+
+## Interval Conversions
+
+By default, many operations on date objects are based upon days.
+
+&nbsp;
+
+```{r}
+hired <- mdy( "08/25/2004")
+days <- today - hired 
+days 
+```
+
+
+## Incremenatlly Building Dates & Times 
+
+You can add arbitrary components to dates using these helper functions
+
+```{r}
+today + months(1)+ weeks(1) + days(6) + hours(4) - minutes(35) + seconds(15) 
+```
+
+## Making Time
+
+Just like making a date, we can make time elements.
+
+&nbsp;
+
+```{r}
+classtime <- mdy_hms("09/01/2022 12:30 PM")
+classtime
+```
+
+
+
+
+## {background-color="black" background-image="media/nist.png" background-position="cover"}
+
+## Setting a Time Zone
+
+The time zone is best set when you create the date/time object.
+
+```{r}
+today <- mdy_hm("09/01/2022 12:30 PM", tz="US/Eastern")
+today
+```
+
+
+## Durations
+
+Once we have more than one date, we can deal with duration.   
+
+```{r}
+#| error: true
+#| warning: true
+hired - today
+```
+
+::: {.fragment}
+
+However, they *MUST* be compatible (these are not because hired has to timezone). 
+
+```{r}
+hired <- ymd("2004/08/23", tz="US/Eastern")
+howLong <- today - hired
+class( howLong )
+howLong
+```
+:::
+
+
+## More Date Operations
+
+There are a lot more operations you can do with date and time objects.  I recommend you look at the [Cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) in the repository for the `lubridate` library.
+
+
+
+
+
 
 ## Questions
 

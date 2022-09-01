@@ -15,6 +15,7 @@ At the end of this topic, you should be able to:
 ## Content
  - [Slides](https://dyerlabteaching.github.io/basic-data-types/slides.html)
  - [Narrative](https://dyerlabteaching.github.io/basic-data-types/narrative.html)
+ - [Cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) for the library `lubridate`
 
 ## Contact Information
 
