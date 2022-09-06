@@ -1,5 +1,6 @@
-# Basic Data Types
+![](https://unsplash.com/photos/8OyKWQgBsKQ/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8ZGF0YSUyMHR5cGVzfGVufDB8fHx8MTY2MjQ3Njc2MQ&force=true&w=640)
 
+# Basic Data Types
 
 ## Impetus
 
