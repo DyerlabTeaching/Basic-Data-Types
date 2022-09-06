@@ -18,6 +18,22 @@ title-slide-attributes:
 ---
 
 
+## Assignment Operator
+
+In `R`, values can be assigned to variables using the `->` operator.  
+
+::: {.incremental}
+- Variable names should be informative
+    - Must *start with* letter
+    - Can include numbers, underscore, periods
+    - No spaces
+    - Case sensitive.
+- Assignment is directional `->` and `<-` work.
+- Use names that won't make your *future self* hate your *present self*
+:::
+
+
+
 ## Basic Data Types
 
 There are several different data types in R, each of which represents some *identifiable* component in our analysis mileau.  For this quick lecture, we are going to focus on four of the most common types.
@@ -32,6 +48,8 @@ There are several different data types in R, each of which represents some *iden
 
 
 # No Data {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
+
+
 
 ## Missing Data
 
@@ -69,19 +87,6 @@ Numerical data is the *most common* type of data that we will all be using.  In 
 :::
 
 
-## Assignment Operator
-
-In `R`, values can be assigned to variables using the `->` operator.  
-
-::: {.incremental}
-- Variable names should be informative
-    - Must *start with* letter
-    - Can include numbers, underscore, periods
-    - No spaces
-    - Case sensitive.
-- Assignment is directional `->` and `<-` work.
-- Use names that won't make your *future self* hate your *present self*
-:::
 
 ## Examples
 
