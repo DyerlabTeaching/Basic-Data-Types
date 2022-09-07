@@ -228,19 +228,19 @@ x + 23
 ```
 
 ::: {.fragment}
-This **error** is thrown because value of `x` is:
+
+&nbsp;
+
+::: {layout-ncol="2"}
 ```{r}
 class(x)
 ```
-:::
 
-::: {.fragment}
-but the addition operator tries to combine the `x` with 
 ```{r}
 class( 23 )
 ```
+:::
 
-which does not even make sense.
 :::
 
 ## Coercion
@@ -376,15 +376,20 @@ There are 3 primary logical operators that can be used on logical types; one una
 The `negation` operator
 ```{r}
 !dyer_has_good_jokes
+!(!dyer_has_good_jokes)
 ```
 :::
 
+
+
+
+
+
+## The Binary Operators
+
+These operators require two separate items to operate on, one to the left and another to the right of the operator.
+
 &nbsp;
-
-
-::: {.fragment}
-
-### The Binary Operators
 
 ::: {layout-ncol="2"}
 #### The OR operator
@@ -401,7 +406,7 @@ TRUE & FALSE
 :::
 
 
-:::
+
 
 
 ## Introspection
@@ -438,22 +443,22 @@ as.logical( "FALSE" )
 
 :::
 
-&nbsp;
 
-::: {.fragment}
+
+## Incompatible Coercion
+
+
 Other `character` types result in `NA` (missing data).
 
 ```{r}
 as.logical( "Bob" )
 ```
-:::
+
 
 
 ## Coercion
 
 Coercion of something else to a `Logical` is more case-specific.
-
-&nbsp;
 
 From `numeric` data:  
 - Values of `0` are `FALSE`  
@@ -461,17 +466,14 @@ From `numeric` data:
 
 &nbsp;
 
-::: {.fragment}
+::: {layout-ncol="2"}
 ```{r}
 as.logical(0)
 ```
 
-&nbsp;
-
 ```{r}
 as.logical( 323 )
 ```
-
 :::
 
 
@@ -486,12 +488,12 @@ When we read textual representations of dates and times, we *intuitively* unders
 - Tomorrow @ Noon
 - Next Thursday afternoon
 
-::: {.fragment}
 
-&nbsp;
 
-But for `R`, we need to be able to tell the computer what these sequences of characters mean in a way that they can understand that something like `03/01/22` means either March 1, 2022 (if you are in the US) or Januar 3, 2022 (if you are in Europe) and that intrinsic relationships between what a `March` and a `January` really mean.
-:::
+## Dates & Time in R
+
+But for `R`, we need to be able to tell the computer what these sequences of characters mean in a way that they can understand that something like `03/01/22` means either March 1, 2022 (if you are in the US) or January 3, 2022 (if you are in Europe) and that intrinsic relationships between what a `March` and a `January` really mean.
+
 
 
 ## {{< fa regular clock >}} Computer Time 
@@ -511,16 +513,14 @@ Sys.time()
 :::
 
 
-::: {.fragment}
-
-&nbsp;
+## {{< fa regular clock >}} Unix Epoch Time
 
 But this is just a representation of the time for your geospatial position.  Internally, it 
 
 ```{r}
-unclass( Sys.time())
+unclass( Sys.time() )
 ```
-:::
+
 
 
 ## Helpful Library
@@ -551,8 +551,7 @@ class( sep1 )
 sep1
 ```
 
-::: {.fragment }
-&nbsp;
+## Creating Dates
 
 So this is a month/day/year format.   We can use the function `mdy()` and pass it the character representation of the date.
 
@@ -561,7 +560,7 @@ today <- mdy( sep1 )
 class( today )
 today
 ```
-:::
+
 
 
 ## Date Operators
@@ -643,7 +642,7 @@ Once we have more than one date, we can deal with duration.
 hired - today
 ```
 
-::: {.fragment}
+## Time Classes
 
 However, they *MUST* be compatible (these are not because hired has to timezone). 
 
@@ -653,7 +652,46 @@ howLong <- today - hired
 class( howLong )
 howLong
 ```
+
+
+## Examples
+
+```{r}
+today() - mdy("10/14/1969") -> daysAlive
+daysAlive
+```
+
+:::{.fragment}
+
+### Dyer's Half Life
+```{r}
+daysAlive/2 + mdy("10/14/1969")
+```
 :::
+
+
+## When Is Dyer 20,000 Days Old
+
+```{r}
+mdy("10/14/1969") + days(20000) -> day20K
+```
+&nbsp;
+
+![](media/format.png)
+
+On `r format(day20K,"%A, %B %d, %Y")` Dyer will be 20,000 days old.
+
+
+## Formatting Date & Time Output {.scrollable}
+
+```{r}
+#| echo: false
+helpfile <- utils:::.getHelpFile(help(strptime) )
+outfile <- tempfile(fileext = ".html")
+tools::Rd2HTML(helpfile, out=outfile)
+rawHTML <- paste( readLines(outfile), collapse = "\n")
+knitr::asis_output( htmltools::htmlPreserve(rawHTML))
+```
 
 
 ## More Date Operations
