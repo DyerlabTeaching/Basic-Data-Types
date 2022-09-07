@@ -687,8 +687,9 @@ mdy("10/14/1969") + days(20000) -> day20K
 On `r format(day20K,"%A, %B %d, %Y")` Dyer will be 20,000 days old.
 
 
-## Formatting Date & Time Output {.scrollable}
+##  {.scrollable}
 
+<font size="-1">
 ```{r}
 #| echo: false
 helpfile <- utils:::.getHelpFile(help(strptime) )
@@ -697,7 +698,7 @@ tools::Rd2HTML(helpfile, out=outfile)
 rawHTML <- paste( readLines(outfile), collapse = "\n")
 knitr::asis_output( htmltools::htmlPreserve(rawHTML))
 ```
-
+</font>
 
 ## More Date Operations
 
