@@ -7,6 +7,14 @@ format:
 
 ![Photo by <a href="https://unsplash.com/@matt_j_cand?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Matt J_Cand</a> on <a href="https://unsplash.com/t/wallpapers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](https://unsplash.com/photos/qP54ziIya4k/download?ixid=MnwxMjA3fDB8MXx0b3BpY3x8Ym84alFLVGFFMFl8fHx8fDJ8fDE2NjIwNTI2Nzk&force=true&w=1920)
 
+
+```{r}
+#| eval: false
+remotes::install_github("hadley/emo")
+```
+
+
+
 ```{r}
 #| echo: false
 library(emo)
