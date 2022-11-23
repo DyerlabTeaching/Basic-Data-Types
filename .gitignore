@@ -39,6 +39,6 @@ vignettes/*.pdf
 .Renviron
 .DS_Store
 *.icloud
-*.html
+README*.html
 
 /.quarto/
