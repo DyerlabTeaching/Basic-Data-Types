@@ -1,6 +1,8 @@
+# Basic Data Types
+
 ![](https://unsplash.com/photos/8OyKWQgBsKQ/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8ZGF0YSUyMHR5cGVzfGVufDB8fHx8MTY2MjQ3Njc2MQ&force=true&w=640)
 
-# Basic Data Types
+
 
 ## Impetus
 
@@ -9,9 +11,10 @@ For us to be effective at analyzing a broad range of objects, we need to have ap
 ## Student Learning Objectives
 
 At the end of this topic, you should be able to:  
- - *Describe characteristics of numeric, character, logical, and date data types* 
- - *Use introspection and coercion for basic data types*
- - *Perform operations on included data types.* 
+
+ - Describe characteristics of numeric, character, logical, and date data types.  
+ - Use introspection and coercion for basic data types. 
+ - Perform operations on included data types.  
 
 ## Content
  - [Slides](https://dyerlabteaching.github.io/basic-data-types/slides.html)
