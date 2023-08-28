@@ -1,27 +1,146 @@
 ---
-title: "In Class Activity"
+title: "Data Types In Class Activity"
 format: 
   html:
     code-tools: true
     toc: false
+    exec: true
+    echo: true
 ---
 
 ## Overview & Objective
 
-Put an overview of the activity to be done here.
+This is the first foray into how to actually use `R` and focuses on understanding some of the most basic data types.
 
-## The Data
+## Student Learning Objectives
 
-Insert the part here about adding the data
+At the end of this topic, you should be able to:  
 
-## The Topic
+ - Describe characteristics of numeric, character, logical, and date data types.  
+ - Use introspection and coercion for basic data types. 
+ - Perform operations on included data types.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt lobortis feugiat vivamus at augue. Massa id neque aliquam vestibulum morbi. Sed blandit libero volutpat sed cras ornare arcu dui vivamus. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi. Euismod in pellentesque massa placerat duis. Senectus et netus et malesuada fames ac turpis. Velit laoreet id donec ultrices tincidunt arcu non. Pharetra convallis posuere morbi leo urna molestie at elementum. Enim ut tellus elementum sagittis vitae et leo duis.
 
-Egestas dui id ornare arcu odio ut sem nulla pharetra. Consectetur a erat nam at lectus. Vulputate dignissim suspendisse in est ante in nibh. Vitae suscipit tellus mauris a diam maecenas sed. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere. Nunc mi ipsum faucibus vitae aliquet. Ornare suspendisse sed nisi lacus sed viverra. Viverra mauris in aliquam sem fringilla. Aliquet lectus proin nibh nisl condimentum id venenatis. Nulla facilisi cras fermentum odio. Eu non diam phasellus vestibulum lorem sed. Mollis aliquam ut porttitor leo a.
+## Activity
 
-Est ante in nibh mauris cursus mattis. Tincidunt vitae semper quis lectus nulla at volutpat. Non enim praesent elementum facilisis leo vel fringilla est. Odio morbi quis commodo odio aenean. Integer malesuada nunc vel risus commodo viverra. Blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Volutpat maecenas volutpat blandit aliquam. Viverra vitae congue eu consequat ac felis donec et odio. Ut porttitor leo a diam sollicitudin tempor. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices.
+The following markdown has a set of questions followed by a chunk for you to put in code to answer the question.  Fill them all out as indicated.
 
-Donec ultrices tincidunt arcu non sodales. Magna sit amet purus gravida. Velit euismod in pellentesque massa. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Enim facilisis gravida neque convallis a. Elementum eu facilisis sed odio morbi quis commodo. Duis at tellus at urna condimentum mattis pellentesque. Malesuada fames ac turpis egestas integer eget aliquet nibh. Tempor nec feugiat nisl pretium fusce id velit ut tortor. Sed felis eget velit aliquet. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Arcu ac tortor dignissim convallis aenean et. Imperdiet proin fermentum leo vel orci porta non pulvinar neque. Libero justo laoreet sit amet cursus sit amet dictum sit.
 
-Bibendum ut tristique et egestas quis. Lectus sit amet est placerat. Faucibus et molestie ac feugiat sed lectus vestibulum mattis. In hac habitasse platea dictumst quisque. Nunc mi ipsum faucibus vitae aliquet. Risus pretium quam vulputate dignissim suspendisse. Vitae turpis massa sed elementum tempus egestas sed sed. Molestie at elementum eu facilisis sed odio morbi. Viverra maecenas accumsan lacus vel facilisis volutpat est. Sodales ut eu sem integer vitae justo. Duis tristique sollicitudin nibh sit amet commodo nulla. Diam vel quam elementum pulvinar etiam non quam lacus suspendisse. Leo in vitae turpis massa sed elementum tempus egestas.
+### Numeric Data
+
+What is your favorite number
+
+```{r}
+
+```
+
+
+The ancient Egyptians were quite cleaver at engineering and building things.  The [Rhind Papyrus](https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus), which dates to 1650 BCE, indicates that they estimated the ratio between the circumfrence and the diameter of a circle to be 256 divided by 81.  Mathematically is this more or less than what we estimate $\pi$ as?  What is the magnitude of the difference?
+
+```{r}
+
+```
+
+
+
+The function `sqrt()` provides you the square root of a number. Assign a variable named `root2` to hold the value of `sqrt(2)`.
+
+```{r}
+
+```
+
+
+What is the value contained in the variable below named `sqrOfNegative2`?  Explain the result and make any modifications necessary to be more explicit.
+
+```{r}
+sqrOfNegative2 <- -2^2
+```
+
+
+
+### Character Data
+
+Create variables for your first and last names (and give them proper variable names).
+
+```{r}
+
+```
+
+
+Use the functions `print()` and `cat()` to display these values.  Are these two functions identical?
+
+```{r}
+
+```
+
+
+Create a new variable, `properName`, which is your last name, a commma and space, followed by your first name.  Use the variables above instead of writing out the letters for your names.
+
+```{r}
+
+```
+
+
+The function `nchar()` returns the number of characters in a character variable.  Use it on your `properName`.
+
+```{r}
+
+```
+
+
+### Logical Data 
+
+Create the variables `trueResult` and `falseResult` and assign them the proper logical values for R.
+
+```{r}
+
+```
+
+
+Using the variables `trueResult` and `falseResult` demonstrate logical operators for equality, inequality, and negation.
+
+```{r}
+
+```
+
+
+Using the variables `trueResult` and `falseResult` demonstrate AND operator in R for all pairwise combinations (e.g, for the and operator, show how to evaluate `trueResult` and `trueResult`, `trueResult` and `falseResult`, `falseResult` and `trueResult`, and `falseResult` and `falseResult`)
+
+```{r}
+
+```
+
+Do the same as the previous question for the approriate OR operator.
+
+```{r}
+
+```
+
+
+
+
+In the example above for the square root, the variable `root2` has the square root of the number $2$.  Test the equality (e.g., use the `==` operator) of this varible times itself to the value $2$. Discuss this with your neighbor.  Does this make sense?
+
+```{r}
+
+```
+
+
+
+### Dates
+
+
+When did you first become a college student?  Create a variable representing this date.
+
+```{r}
+
+```
+
+
+How many days was it between then and now?
+
+```{r}
+
+```
+
+

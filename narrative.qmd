@@ -9,9 +9,6 @@ format:
 
 
 
-
-
-
 ## Missing Data
 
 > The Absence of Data
