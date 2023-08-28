@@ -6,7 +6,6 @@ format:
   revealjs:
     background-transition: fade
     theme: default
-    logo: "media/ces_logo.png"
     chalkboard: true
 editor: source
 execute: 
@@ -36,7 +35,7 @@ In `R`, values can be assigned to variables using the `->` operator.
 
 ## Basic Data Types
 
-There are several different data types in R, each of which represents some *identifiable* component in our analysis mileau.  For this quick lecture, we are going to focus on four of the most common types.
+There are several different data types in R, each of which represents some *identifiable* component in our analysis mileau.  For this quick lecture, we are going to focus on five of the most common data types.
 
 ::: {.incremental}
 - Missing Data: The absence of anything.
@@ -340,7 +339,6 @@ lastName <- "Dyer"
 
 
 ::: {.fragment}
-&nbsp;
 
 Using the `paste()` function.
 
@@ -568,6 +566,17 @@ today
 
 
 
+## Actual Today
+
+There are also a few built-in functions that we can use to help reduce our *need to type*.
+
+```{r}
+today <- today()
+class(today)
+today
+```
+
+
 ## Date Operators
 
 Things that are intrinsically "Date" objects have operators that can be used.  Examples include adding/subtracting days, determine day of the week, or the Julian day.
@@ -601,7 +610,6 @@ hired <- mdy( "08/25/2004")
 days <- today - hired 
 days 
 ```
-
 
 ## Incremenatlly Building Dates & Times 
 
@@ -637,15 +645,6 @@ today
 ```
 
 
-## Durations
-
-Once we have more than one date, we can deal with duration.   
-
-```{r}
-#| error: true
-#| warning: true
-hired - today
-```
 
 ## Time Classes
 
@@ -687,7 +686,16 @@ mdy("10/14/1969") + days(20000) -> day20K
 On `r format(day20K,"%A, %B %d, %Y")` Dyer will be 20,000 days old.
 
 
-##  {.scrollable}
+
+
+## More Date Operations
+
+There are a lot more operations you can do with date and time objects.  I recommend you look at the [Cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) in the repository for the `lubridate` library.
+
+
+
+
+## Help for Date & Time Conversions {.scrollable}
 
 <font size="-1">
 ```{r}
@@ -700,19 +708,22 @@ knitr::asis_output( htmltools::htmlPreserve(rawHTML))
 ```
 </font>
 
-## More Date Operations
-
-There are a lot more operations you can do with date and time objects.  I recommend you look at the [Cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) in the repository for the `lubridate` library.
 
 
 
 
+
+
+
+
+
+## This is t
 
 
 ## Questions
 
 ::: {layout-ncol="2"}
-If you have any questions, please feel free to either post them as an "Issue" on your copy of this GitHub Repository, post to the [Canvas](https://canvas.vcu.edu) discussion board for the class, or drop me an [email](mailto://rjdyer@vcu.edu).
+If you have any questions, please feel free to either post them to the [Canvas](https://canvas.vcu.edu) discussion board for the class, or drop me an [email](mailto://rjdyer@vcu.edu).
 
 ![](media/peter_sellers.gif){.middle fig-alt="Peter Sellers looking bored" fig-align="center" width="500"}
 :::
