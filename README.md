@@ -17,10 +17,14 @@ At the end of this topic, you should be able to:
  - Perform operations on included data types.  
 
 ## Content
- - [Slides](https://dyerlabteaching.github.io/basic-data-types/slides.html)
- - [Narrative](https://dyerlabteaching.github.io/basic-data-types/narrative.html)
- - [Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) for basic `R` functionality.
- - [Cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) for the library `lubridate`.
+
+This learning module has the following components:
+
+ - [Video](https://www.loom.com/share/bfb38096deaf40ce81c04abfb6b24ee8?sid=a6d43f6d-b41f-4175-b5b4-dca9bdebb450) of the lecture content.  
+ - [Slides](https://dyerlabteaching.github.io/basic-data-types/slides.html) presented on the video.  
+ - A longer [narrative](https://dyerlabteaching.github.io/basic-data-types/narrative.html) on the topic.    
+ - A general [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) for basic `R` functionality.  
+ - Another [cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) for the library `lubridate`.
 
 ## Contact Information
 

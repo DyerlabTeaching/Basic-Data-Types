@@ -10,7 +10,7 @@
 <link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.3.340">
 
   <meta name="author" content="Rodney Dyer, PhD">
   <title>Basic Data Types</title>
@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -961,7 +961,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-08-28 10:11:21 EDT"</code></pre>
+<pre><code>[1] "2023-08-28 14:40:36 EDT"</code></pre>
 </div>
 </div>
 </div>
@@ -972,7 +972,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">unclass</span>( <span class="fu">Sys.time</span>() )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1693231882</code></pre>
+<pre><code>[1] 1693248036</code></pre>
 </div>
 </div>
 </section>
@@ -1186,7 +1186,7 @@ function processMathHTML() {
 </tr>
 </tbody>
 </table>
-<section id="date-time-conversion-functions-to-and-from-character" class="slide level2">
+<section id="strptime" class="slide level2">
 <h2>Date-time Conversion Functions to and from Character</h2>
 <h3 id="description">Description</h3>
 <p>Functions to convert between character representations and objects of classes <code>"POSIXlt"</code> and <code>"POSIXct"</code> representing calendar dates and times.</p>
@@ -1198,36 +1198,41 @@ function processMathHTML() {
 <span id="cb110-5"><a href="#cb110-5"></a>       <span class="at">digits =</span> <span class="fu">getOption</span>(<span class="st">"digits.secs"</span>), ...)</span>
 <span id="cb110-6"><a href="#cb110-6"></a></span>
 <span id="cb110-7"><a href="#cb110-7"></a><span class="do">## S3 method for class 'POSIXt'</span></span>
-<span id="cb110-8"><a href="#cb110-8"></a><span class="fu">as.character</span>(x, ...)</span>
-<span id="cb110-9"><a href="#cb110-9"></a></span>
-<span id="cb110-10"><a href="#cb110-10"></a><span class="fu">strftime</span>(x, <span class="at">format =</span> <span class="st">""</span>, <span class="at">tz =</span> <span class="st">""</span>, <span class="at">usetz =</span> <span class="cn">FALSE</span>, ...)</span>
-<span id="cb110-11"><a href="#cb110-11"></a><span class="fu">strptime</span>(x, format, <span class="at">tz =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb110-8"><a href="#cb110-8"></a><span class="fu">as.character</span>(x, <span class="at">digits =</span> <span class="cf">if</span>(<span class="fu">inherits</span>(x, <span class="st">"POSIXlt"</span>)) 14L <span class="cf">else</span> 6L,</span>
+<span id="cb110-9"><a href="#cb110-9"></a>             <span class="at">OutDec =</span> <span class="st">"."</span>, ...)</span>
+<span id="cb110-10"><a href="#cb110-10"></a></span>
+<span id="cb110-11"><a href="#cb110-11"></a><span class="fu">strftime</span>(x, <span class="at">format =</span> <span class="st">""</span>, <span class="at">tz =</span> <span class="st">""</span>, <span class="at">usetz =</span> <span class="cn">FALSE</span>, ...)</span>
+<span id="cb110-12"><a href="#cb110-12"></a><span class="fu">strptime</span>(x, format, <span class="at">tz =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="arguments">Arguments</h3>
 <table data-quarto-postprocess="true">
 <tbody>
-<tr class="odd" style="vertical-align: top;">
-<td><code>x</code></td>
+<tr class="odd">
+<td><code id="strptime_:_x">x</code></td>
 <td><p>An object to be converted: a character vector for <code>strptime</code>, an object which can be converted to <code>"POSIXlt"</code> for <code>strftime</code>.</p></td>
 </tr>
-<tr class="even" style="vertical-align: top;">
-<td><code>tz</code></td>
+<tr class="even">
+<td><code id="strptime_:_tz">tz</code></td>
 <td><p>A character string specifying the time zone to be used for the conversion. System-specific (see <code>as.POSIXlt</code>), but <code>""</code> is the current time zone, and <code>"GMT"</code> is UTC. Invalid values are most commonly treated as UTC, on some platforms with a warning.</p></td>
 </tr>
-<tr class="odd" style="vertical-align: top;">
-<td><code>format</code></td>
+<tr class="odd">
+<td><code id="strptime_:_format">format</code></td>
 <td><p>A character string. The default for the <code>format</code> methods is <code>"%Y-%m-%d %H:%M:%S"</code> if any element has a time component which is not midnight, and <code>"%Y-%m-%d"</code> otherwise. If <code>options("digits.secs")</code> is set, up to the specified number of digits will be printed for seconds.</p></td>
 </tr>
-<tr class="even" style="vertical-align: top;">
-<td><code>...</code></td>
+<tr class="even">
+<td><code id="strptime_:_...">...</code></td>
 <td><p>Further arguments to be passed from or to other methods.</p></td>
 </tr>
-<tr class="odd" style="vertical-align: top;">
-<td><code>usetz</code></td>
+<tr class="odd">
+<td><code id="strptime_:_usetz">usetz</code></td>
 <td><p>logical. Should the time zone abbreviation be appended to the output? This is used in printing times, and more reliable than using <code>"%Z"</code>.</p></td>
 </tr>
-<tr class="even" style="vertical-align: top;">
-<td><code>digits</code></td>
-<td><p>integer determining the <code>format()</code>ing of seconds when needed.</p></td>
+<tr class="even">
+<td><code id="strptime_:_digits">digits</code></td>
+<td><p>integer determining the <code>format()</code>ing of seconds when needed. Note that the defaults for <code>format()</code> and <code>as.character()</code> differ on purpose, <code>as.character()</code> giving close to full accuracy as it does for numbers.</p></td>
+</tr>
+<tr class="odd">
+<td><code id="strptime_:_OutDec">OutDec</code></td>
+<td><p>a 1-character string specifying the decimal point to be used; the default is <em>not</em> <code>getOption("OutDec")</code> on purpose.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1239,7 +1244,7 @@ function processMathHTML() {
 
 <p>The <code>format</code> and <code>as.character</code> methods and <code>strftime</code>
 convert objects from the classes <code>"POSIXlt"</code> and
-<code>"POSIXct"</code> to character vectors.
+<code>"POSIXct"</code> to <code>character</code> vectors.
 </p>
 <p><code>strptime</code> converts character vectors to class <code>"POSIXlt"</code>:
 its input <code>x</code> is first converted by <code>as.character</code>.
@@ -1250,12 +1255,12 @@ specified: any trailing characters are ignored.
 <code>format.POSIXct</code> first convert to class <code>"POSIXlt"</code> by
 calling <code>as.POSIXlt</code> (so they also work for class
 <code>"Date"</code>).  Note that only that conversion depends on the
-time zone.
-Since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> version 4.2.0, that <code>as.POSIXlt()</code> conversion now treats
-the non-finite numeric <code>-Inf</code>, <code>Inf</code>, <code>NA</code> and <code>NaN</code>
-differently (where previously all were treated as <code>NA</code>) and also
-the <code>format()</code> method for <code>POSIXlt</code> now treats these different
-non-finite times and dates analogously to type <code>double</code>.
+time zone.  Since <span class="rlang"><b>R</b></span> version 4.2.0, <code>as.POSIXlt()</code> conversion now
+treats the non-finite numeric <code>-Inf</code>, <code>Inf</code>, <code>NA</code> and
+<code>NaN</code> differently (where previously all were treated as
+<code>NA</code>). Also the <code>format()</code> method for <code>POSIXlt</code> now
+treats these different non-finite times and dates analogously to type
+<code>double</code>.
 </p>
 <p>The usual vector re-cycling rules are applied to <code>x</code> and
 <code>format</code> so the answer will be of length of the longer of these
@@ -1267,7 +1272,7 @@ and months, the AM/PM indicator (if used) and the separators in output
 formats such as <code>%x</code> and <code>%X</code>, <em>via</em> the setting of
 the <code>LC_TIME</code> locale category.  The ‘current
 locale’ of the descriptions might mean the locale in use at the start
-of the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> session or when these functions are first used.  (For input,
+of the <span class="rlang"><b>R</b></span> session or when these functions are first used.  (For input,
 the locale-specific conversions can be changed by calling
 <code>Sys.setlocale</code> with category <code>LC_TIME</code> (or
 <code>LC_ALL</code>).  For output, what happens depends on the OS but
@@ -1348,12 +1353,12 @@ undefined if used for input in such a locale.
 <p>Some platforms accept <code>%P</code> for output, which uses a lower-case
 version (<code>%p</code> may also use lower case): others will output
 <code>P</code>.</p>
-</dd> 
+</dd>
 <dt><code>%r</code></dt><dd><p>For output, the 12-hour clock time (using the
 locale's AM or PM): only defined in some locales, and on some OSes
 misleading in locales which do not define an AM/PM indicator.
 For input, equivalent to <code>%I:%M:%S %p</code>.</p>
-</dd> 
+</dd>
 <dt><code>%R</code></dt><dd><p>Equivalent to <code>%H:%M</code>.</p>
 </dd>
 <dt><code>%S</code></dt><dd><p>Second as integer (00–61), allowing for
@@ -1366,9 +1371,7 @@ will ignore leap seconds).</p>
 </dd>
 <dt><code>%u</code></dt><dd><p>Weekday as a decimal number (1–7, Monday is 1).</p>
 </dd>
-</dl>
 
-<dl>
 <dt><code>%U</code></dt><dd><p>Week of the year as decimal number (00–53) using
 Sunday as the first day 1 of the week (and typically with the
 first Sunday of the year as day 1 of week 1).  The US convention.</p>
@@ -1407,11 +1410,12 @@ with agreement of the parties involved.
 </p>
 <p>For input, only years <code>0:9999</code> are accepted.</p>
 </dd>
-<dt><code>%z</code></dt><dd><p>Signed offset in hours and minutes
-from UTC, so <code>-0800</code> is 8 hours behind UTC. Values up to
-<code>+1400</code> are accepted.  (Standard only for output.  For input
-<span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> currently supports it on all platforms.)</p>
-</dd> 
+<dt><code>%z</code></dt><dd><p>Signed offset in hours and minutes from UTC, so
+<code>-0800</code> is 8 hours behind UTC.  (Standard only for output.  For
+input <span class="rlang"><b>R</b></span> currently supports it on all platforms – values from
+<code>-1400</code> to <code>+1400</code> are accepted.)</p>
+</dd>
+
 <dt><code>%Z</code></dt><dd><p>(Output only.)  Time zone abbreviation as a
 character string (empty if not available).  This may not be reliable
 when a time zone has changed abbreviations over the years.</p>
@@ -1429,11 +1433,13 @@ month abbreviations are not the same on any two of Linux, macOS, Solaris
 and Windows). Knowing what the abbreviations are is essential
 if you wish to use <code>%a</code>, <code>%b</code> or <code>%h</code> as part of an
 input format: see the examples for how to check.
-
 </p>
 <p>When <code>%z</code> or <code>%Z</code> is used for output with an
 object with an assigned time zone an attempt is made to use the values
 for that time zone — but it is not guaranteed to succeed.
+</p>
+<p>The definition of ‘whitespace’ for <code>%n</code> and <code>%t</code>
+is platform-dependent: for most it does not include non-breaking spaces.
 </p>
 <p>Not in the standards and less widely implemented are
 </p>
@@ -1460,13 +1466,13 @@ numerals), and <code>%E[cCyYxX]</code> which can use an alternative
 are supported is OS-dependent.  These are accepted for input, but with
 the standard interpretation.
 </p>
-<p>Specific to <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> is <code>%OSn</code>, which for output gives the seconds
+<p>Specific to <span class="rlang"><b>R</b></span> is <code>%OSn</code>, which for output gives the seconds
 truncated to <code>0 &lt;= n &lt;= 6</code> decimal places (and if <code>%OS</code> is
 not followed by a digit, it uses the setting of
 <code>getOption("digits.secs")</code>, or if that is unset, <code>n =
   0</code>).  Further, for <code>strptime</code> <code>%OS</code> will input seconds
 including fractional seconds.  Note that <code>%S</code> does not read
-fractional parts on output. 
+fractional parts on output.
 </p>
 <p>The behaviour of other conversion specifications (and even if other
 character sequences commencing with <code>%</code> <em>are</em> conversion
@@ -1480,10 +1486,7 @@ locales are unlikely to cause a problem.
 
 <p>The <code>format</code> methods and <code>strftime</code> return character vectors
 representing the time.  <code>NA</code> times are returned as
-<code>NA_character_</code>.  The elements are restricted to 256 bytes, plus
-a time zone abbreviation if <code>usetz</code> is true.  (On known platforms
-longer strings are truncated at 255 or 256 bytes, but this is not
-guaranteed by the C99 standard.)
+<code>NA_character_</code>.
 </p>
 <p><code>strptime</code> turns character representations into an object of
 class <code>"POSIXlt"</code>.  The time zone is used to set the
@@ -1500,7 +1503,7 @@ invalid time, not just a time that does not exist in some time zone.)
 <p>Everyone agrees that years from 1000 to 9999 should be printed with 4
 digits, but the standards do not define what is to be done outside
 that range.  For years 0 to 999 most OSes pad with zeros or spaces to
-4 characters, and Linux outputs just the number.
+4 characters, but Linux/glibc outputs just the number.
 </p>
 <p>OS facilities will probably not print years before 1 CE (aka 1 AD)
 ‘correctly’ (they tend to assume the existence of a year 0: see
@@ -1511,11 +1514,14 @@ completely wrong).  Common formats are <code>-45</code> and <code>-045</code>.
 more characters.
 </p>
 <p>Some platforms support modifiers from POSIX 2008 (and others).  On
-Linux the format <code>"%04Y"</code> assures a minimum of four characters
-and zero-padding.  The internal code (as used on Windows and by
-default on macOS) uses zero-padding by default, and formats
-<code>%_4Y</code> and <code>%_Y</code> can be used for space padding and no
-padding.
+Linux/glibc the format <code>"%04Y"</code> assures a minimum of four
+characters and zero-padding (the default is no padding).  The internal
+code (as used on Windows and by default on macOS) uses zero-padding by
+default (this can be controlled by environment variable
+<span class="env">R_PAD_YEARS_BY_ZERO</span>).  On those platforms, formats <code>%04Y</code>,
+<code>%_4Y</code> and <code>%_Y</code> can be used for zero, space and no
+padding respectively. (On macOS, the native code (not the default)
+supports none of these and uses zero-padding to 4 digits.)
 </p>
 
 
@@ -1528,16 +1534,21 @@ difficulties as they are often computed incorrectly.
 <p>They conventionally have the opposite sign from time-zone
 specifications (see <code>Sys.timezone</code>): positive values are
 East of the meridian.  Although there have been time zones with
-offsets like 00:09:21 (Paris in 1900), and 00:44:30 (Liberia until
+offsets like +00:09:21 (Paris in 1900), and -00:44:30 (Liberia until
 1972), offsets are usually treated as whole numbers of minutes, and
 are most often seen in RFC 5322 email headers in forms like
 <code>-0800</code> (e.g., used on the Pacific coast of the USA in winter).
 </p>
 <p>Format <code>%z</code> can be used for input or output: it is a character
-string, conventionally plus or minus followed by two digits for
-hours and two for minutes: the standards say that an empty string
-should be output if the offset is unknown, but some systems use the
-offsets for the time zone in use for the current year.
+string, conventionally plus or minus followed by two digits for hours
+and two for minutes: the standards say that an empty string should be
+output if the offset is undetermined, but some systems use
+<code>+0000</code> or the offsets for the time zone in use for the current
+year.  (On some platforms this works better after conversion to
+<code>"POSIXct"</code>.  Some platforms only recognize hour or half-hour
+offsets for output.)
+</p>
+<p>Using <code>%z</code> for input makes most sense with <code>tz = "UTC"</code>.
 </p>
 
 
@@ -1547,7 +1558,7 @@ offsets for the time zone in use for the current year.
 function <code>strftime</code>.
 </p>
 <p>However, not all OSes (notably Windows) provided <code>strptime</code> and
-many issues were found for those which did, so since 2000 <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> has used
+many issues were found for those which did, so since 2000 <span class="rlang"><b>R</b></span> has used
 a fork of code from ‘<span class="samp">⁠glibc⁠</span>’.  The forked code uses the
 system's <code>strftime</code> to find the locale-specific day and month
 names and any AM/PM indicator.
@@ -1557,6 +1568,10 @@ system's <code>strftime</code> is replaced (along with most of the rest of
 the C-level datetime code) by code modified from IANA's ‘<span class="samp">⁠tzcode⁠</span>’
 distribution (<a href="https://www.iana.org/time-zones">https://www.iana.org/time-zones</a>).
 </p>
+<p>Note that as <code>strftime</code> is used for output (and not
+<code>wcsftime</code>), argument <code>format</code> is translated if necessary to
+the session encoding.
+</p>
 
 
 <h3>Note</h3>
@@ -1564,7 +1579,8 @@ distribution (<a href="https://www.iana.org/time-zones">https://www.iana.org/tim
 <p>The default formats follow the rules of the ISO 8601 international
 standard which expresses a day as <code>"2001-02-28"</code> and a time as
 <code>"14:01:02"</code> using leading zeroes as here.  (The ISO form uses no
-space to separate dates and times: <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> does by default.)
+space, possibly ‘<span class="samp">⁠T⁠</span>’, to separate dates and times: <span class="rlang"><b>R</b></span> uses a space
+by default.)
 </p>
 <p>For <code>strptime</code> the input string need not specify the date
 completely: it is assumed that unspecified seconds, minutes or hours
@@ -1589,7 +1605,12 @@ return nonsensical results for non-existent times at DST transitions.
 <p>In a C locale <code>%c</code> is required to be
 <code>"%a %b %e %H:%M:%S %Y"</code>.  As Windows does not comply (and
 uses a date format not understood outside N. America), that format is
-used by <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> on Windows in all locales.
+used by <span class="rlang"><b>R</b></span> on Windows in all locales.
+</p>
+<p>There is a limit of 2048 bytes on each string produced by
+<code>strftime</code> and the <code>format</code> methods.  As from <span class="rlang"><b>R</b></span> 4.3.0
+attempting to exceed this is an error (previous versions silently
+truncated at 255 bytes).
 </p>
 
 
@@ -1600,7 +1621,8 @@ used by <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b
 Information interchange – Representation of dates and times.’,
 slightly updated to International Organization for Standardization (2019)
 ‘ISO 8601-1:2019.  Date and time – Representations for
-information interchange – Part 1: Basic rules’.
+information interchange – Part 1: Basic rules’, and further amended
+in 2022.
 For links to versions available on-line see (at the time of writing)
 <a href="https://dotat.at/tmp/ISO_8601-2004_E.pdf">https://dotat.at/tmp/ISO_8601-2004_E.pdf</a> and
 <a href="https://www.qsl.net/g1smd/isopdf.htm">https://www.qsl.net/g1smd/isopdf.htm</a>; for information on the
@@ -1639,40 +1661,58 @@ x &lt;- c("1jan1960", "2jan1960", "31mar1960", "30jul1960")
 z &lt;- strptime(x, "%d%b%Y")
 ## Sys.setlocale("LC_TIME", lct)
 z
+(chz &lt;- as.character(z)) # same w/o TZ
+## *here* (but not in general), the same as format():
+stopifnot(exprs = {
+     identical(chz, format(z))
+     grepl("^1960-0[137]-[03][012]$", chz[!is.na(z)])
+})
 
 ## read in date/time info in format 'm/d/y h:m:s'
 dates &lt;- c("02/27/92", "02/27/92", "01/14/92", "02/28/92", "02/01/92")
 times &lt;- c("23:03:20", "22:29:56", "01:03:30", "18:21:03", "16:56:26")
 x &lt;- paste(dates, times)
-strptime(x, "%m/%d/%y %H:%M:%S")
+z2 &lt;- strptime(x, "%m/%d/%y %H:%M:%S")
+z2 
+## *here* (but not in general), the same as format():
+stopifnot(identical(format(z2), as.character(z2)))
 
 ## time with fractional seconds
-z &lt;- strptime("20/2/06 11:16:16.683", "%d/%m/%y %H:%M:%OS")
-z # prints without fractional seconds
+z3 &lt;- strptime("20/2/06 11:16:16.683", "%d/%m/%y %H:%M:%OS") 
+z3 # prints without fractional seconds by default, digits.sec = NULL ("= 0")
 op &lt;- options(digits.secs = 3)
-z
+z3 # shows the 3 extra digits
+as.character(z3) # ditto
 options(op)
 
 ## time zone names are not portable, but 'EST5EDT' comes pretty close.
-(x &lt;- strptime(c("2006-01-08 10:07:52", "2006-08-07 19:33:02"),
-               "%Y-%m-%d %H:%M:%S", tz = "EST5EDT"))
-attr(x, "tzone")
+z4 &lt;- strptime(c("2006-01-08 10:07:52", "2006-08-07 19:33:02"),
+               "%Y-%m-%d %H:%M:%S", tz = "EST5EDT")
+z4 
+attr(z4, "tzone")
+as.character(z4)
+z4$sec[2] &lt;- pi # "very" fractional seconds
+as.character(z4) # shows full precision
+format(z4) # no fractional sec
+format(z4, digits=8) # shows only 6  (hard-wired maximum)
+format(z4, digits=4)
+
 
 ## An RFC 5322 header (Eastern Canada, during DST)
 ## In a non-English locale the commented lines may be needed.
+
 ## prev &lt;- Sys.getlocale("LC_TIME"); Sys.setlocale("LC_TIME", "C")
 strptime("Tue, 23 Mar 2010 14:36:38 -0400", "%a, %d %b %Y %H:%M:%S %z")
 ## Sys.setlocale("LC_TIME", prev)
 
 ## Make sure you know what the abbreviated names are for you if you wish
 ## to use them for input (they are matched case-insensitively):
-format(seq.Date(as.Date('1978-01-01'), by = 'day', len = 7), "%a")
-format(seq.Date(as.Date('2000-01-01'), by = 'month', len = 12), "%b")
+format(s1 &lt;- seq.Date(as.Date('1978-01-01'), by = 'day',   len =  7), "%a")
+format(s2 &lt;- seq.Date(as.Date('2000-01-01'), by = 'month', len = 12), "%b")
 
-format(.POSIXct(Inf)) # "Inf"  (was  NA  in R &lt;= 4.1.x)
-notF &lt;- c(-Inf,Inf,NaN,NA)
-(fF &lt;- format(.POSIXct(notF))) # was all  NA, now the last is still NA (not "NA")
-stopifnot(identical(as.character(notF), fF))
+## Non-finite date-times :
+format(as.POSIXct(Inf)) # "Inf"  (was  NA  in R &lt;= 4.1.x)
+format(as.POSIXlt(c(-Inf,Inf,NaN,NA))) # were all NA
 </code></pre>
 
 
