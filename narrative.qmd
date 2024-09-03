@@ -45,7 +45,7 @@ X
 
 Numeric types have a ton of normal operators that can be used.  Some examples include: 
 
-The usual *arithmatic operators*:
+The usual *arithmetic operators*:
 
 ```{r}
 x <- 10
@@ -57,7 +57,7 @@ x * y
 x / y
 ```
 
-You have the *exponentials*:
+You have the *exponential*:
 
 ```{r}
 ## x raised to the y
@@ -67,7 +67,7 @@ x^y
 x^(1/y)
 ```
 
-The *logrithmics*:
+The *logarithmic*:
 
 ```{r}
 ## the natural log
