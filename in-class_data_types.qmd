@@ -1,5 +1,6 @@
 ---
 title: "Data Types In Class Activity"
+author: "YOUR NAME HERE"
 format: 
   html:
     code-tools: true
