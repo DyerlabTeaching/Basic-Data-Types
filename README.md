@@ -25,6 +25,8 @@ This learning module has the following components:
  - A longer [narrative](https://dyerlabteaching.github.io/Basic-Data-Types/narrative.html) on the topic.    
  - A general [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) for basic `R` functionality.  
  - Another [cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) for the library `lubridate`.
+ - A [cheatshee](https://rstudio.github.io/cheatsheets/sf.pdf) for the `sp` library.
+ - A [webpage](https://dyerlab.github.io/gstudio/) covering the `gstudio` package. 
 
 ## Contact Information
 
