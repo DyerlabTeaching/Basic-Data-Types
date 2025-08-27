@@ -8,18 +8,20 @@
 
 For us to be effective at analyzing a broad range of objects, we need to have appropriate representations of measurements and objects in the real world that we can use in our analyses.  
 
-## Student Learning Objectives
+## Module Learning Objectives
 
-At the end of this topic, you should be able to:  
+This module has the following two learning objectives
 
 **1. Master data type handling in R workflows**
 
 > Learners will correctly use and distinguish between core R data types—including missing values (NA), numeric types and arithmetic operators, character strings (with operations like length, substring, splitting), logical data (and logical operators/coercion), and date/time objects (with base R and lubridate)—to prepare, troubleshoot, and validate population genetics datasets.
+
 *Bloom’s Levels:* Apply (use, manipulate), Analyze (distinguish, troubleshoot).
 
 **2. Integrate multi-type data for analysis-ready pipelines**
 
 > Learners will craft concise, error-resistant R code that integrates multiple basic data types (e.g., cleaning missing data, parsing sample dates, filtering using logical conditions, manipulating strings for sample IDs, and performing numeric calculations), enabling seamless downstream population genetic analyses in R.
+
 *Bloom’s Levels:* Apply (implement coding tasks), Create (compose analysis-ready pipelines).
 
 ## Content
