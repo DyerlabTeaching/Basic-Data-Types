@@ -47,4 +47,4 @@ Content related to the delivery of the module.
 
 If you need to contact me, I am available at:  
  - Email: rjdyer@vcu.edu
- - Twitter: [@dyerlab](https://twitter.com/dyerlab/)
+ - Web: [rodneydyer.com](https://rodneydyer.com)
