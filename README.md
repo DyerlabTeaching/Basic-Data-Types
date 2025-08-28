@@ -39,7 +39,9 @@ This learning module has the following components:
 
 ## Meta
 
-- [Teaching Log]((https://dyerlabteaching.github.io/Basic-Data-Types/TeachingLog.html) record of delivery and notes.
+Content related to the delivery of the module.
+
+- A [Teaching Log](https://dyerlabteaching.github.io/Basic-Data-Types/TeachingLog.html) record of delivery and notes.
 
 ## Contact Information
 
