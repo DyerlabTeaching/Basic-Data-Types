@@ -30,11 +30,16 @@ This learning module has the following components:
 
  - [Video](https://www.loom.com/share/bfb38096deaf40ce81c04abfb6b24ee8?sid=a6d43f6d-b41f-4175-b5b4-dca9bdebb450) of the lecture content.  
  - [Slides](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html) presented on the video.  
+ - An [In-Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html) for interactive work on basic data types and to give some confidence in the practitioner.
  - A longer [narrative](https://dyerlabteaching.github.io/Basic-Data-Types/narrative.html) on the topic.    
  - A general [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) for basic `R` functionality.  
  - Another [cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) for the library `lubridate`.
- - A [cheatshee](https://rstudio.github.io/cheatsheets/sf.pdf) for the `sp` library.
+ - A [cheatsheet](https://rstudio.github.io/cheatsheets/sf.pdf) for the `sp` library.
  - A [webpage](https://dyerlab.github.io/gstudio/) covering the `gstudio` package. 
+
+## Meta
+
+- [Teaching Log]((https://dyerlabteaching.github.io/Basic-Data-Types/TeachingLog.html) record of delivery and notes.
 
 ## Contact Information
 

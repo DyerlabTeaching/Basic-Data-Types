@@ -1,0 +1,15 @@
+---
+title: "Teaching Log"
+---
+
+## 2025
+
+### 08-28 Population Genetics
+
+-   Quick run through of the slides
+
+-   Started [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html)
+
+### Environmental Data Literacy
+
+-   Extensive run through
