@@ -46,5 +46,6 @@ Content related to the delivery of the module.
 ## Contact Information
 
 If you need to contact me, I am available at:  
- - Email: rjdyer@vcu.edu
- - Web: [rodneydyer.com](https://rodneydyer.com)
+
+ - Email: [rjdyer@vcu.edu](mailto://rjdyer@vcu.edu)    
+ - Web: [rodneydyer.com](https://rodneydyer.com)   
