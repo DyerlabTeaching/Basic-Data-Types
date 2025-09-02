@@ -8,7 +8,7 @@ title: "Teaching Log"
 
 -   8-28: Quick run through of the slides
 
--   9-2: Did [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html)
+-   9-2: Mostly did [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html) No one finished but I'm going to continue to Data Containers next lecture.
 
 ### Environmental Data Literacy
 
