@@ -6,14 +6,11 @@ title: "Teaching Log"
 
 ### 08-28 Population Genetics
 
--   8-28
+-   8-28: Quick run through of the slides
 
-    -   Quick run through of the slides
-
--   9-2
-
-    -   Started [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html)
+-   9-2: Started [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html)
 
 ### Environmental Data Literacy
 
--   Extensive run through
+-   8-28: Started slides up to [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/named-functions).
+-   9-2: Finished slides and started [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html).

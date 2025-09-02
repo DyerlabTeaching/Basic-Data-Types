@@ -19,7 +19,6 @@ The most fundamental type of data in `R` is  data that does not exist!  Missing 
 x <- NA
 ```
 
-and can be in
 
 
 ## Numerical Data
