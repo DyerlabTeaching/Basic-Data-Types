@@ -36,7 +36,7 @@ What is your favorite number
 ```
 
 
-The ancient Egyptians were quite cleaver at engineering and building things.  The [Rhind Papyrus](https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus), which dates to 1650 BCE, indicates that they estimated the ratio between the circumfrence and the diameter of a circle to be 256 divided by 81.  Mathematically is this more or less than what we estimate $\pi$ as?  What is the magnitude of the difference?
+The ancient Egyptians were quite cleaver at engineering and building things.  The [Rhind Papyrus](https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus), which dates to 1650 BCE, indicates that they estimated the ratio between the circumference and the diameter of a circle to be 256 divided by 81.  Create a variable that estimates the papyrus version of pi.  Compare it to the value of the real version of pi (in `R`, we use `pi` a built-in variable.) Mathematically is the previous version greater or less than what we use now? 
 
 ```{r}
 
@@ -44,14 +44,14 @@ The ancient Egyptians were quite cleaver at engineering and building things.  Th
 
 
 
-The function `sqrt()` provides you the square root of a number. Assign a variable named `root2` to hold the value of `sqrt(2)`.
+The function `sqrt()` provides you the square root of a number. Assign a variable named `root2` to hold the value of `sqrt(2)`.  Show the value of this variable.
 
 ```{r}
 
 ```
 
 
-What is the value contained in the variable below named `sqrOfNegative2`?  Explain the result and make any modifications necessary to be more explicit.
+What is the value contained in the variable below named `sqrOfNegative2`?  Is this what you would expect for the square of -2? Why or why not?
 
 ```{r}
 sqrOfNegative2 <- -2^2
@@ -68,21 +68,28 @@ Create variables for your first and last names (and give them proper variable na
 ```
 
 
-Use the functions `print()` and `cat()` to display these values.  Are these two functions identical?
+Combine these variables into a single variable `fullName` using `paste()`.
 
 ```{r}
 
 ```
 
 
-Create a new variable, `properName`, which is your last name, a commma and space, followed by your first name.  Use the variables above instead of writing out the letters for your names.
+Use the functions `print()` and `cat()` to display `fullName`.  Do these two functions produce identical output?  Explain.
 
 ```{r}
 
 ```
 
 
-The function `nchar()` returns the number of characters in a character variable.  Use it on your `properName`.
+Create a new variable, `properName`, which is your last name, a comma and space, followed by your first name (see the help for `paste()` and in particular the `sep` argument.)  Use the variables above instead of writing out the letters for your names.
+
+```{r}
+
+```
+
+
+The function `nchar()` returns the number of characters in a character variable.  Use it on your `properName`.  How many characters are in your name?
 
 ```{r}
 
@@ -91,14 +98,14 @@ The function `nchar()` returns the number of characters in a character variable.
 
 ### Logical Data 
 
-Create the variables `trueResult` and `falseResult` and assign them the proper logical values for R.
+Create the variables `trueResult` and `falseResult` and assign them the approprite values.
 
 ```{r}
 
 ```
 
 
-Using the variables `trueResult` and `falseResult` demonstrate logical operators for equality, inequality, and negation.
+Using the variables `trueResult` and `falseResult` to demonstrate logical operators for *equality*, *inequality*, and *negation*.
 
 ```{r}
 
@@ -111,16 +118,21 @@ Using the variables `trueResult` and `falseResult` demonstrate AND operator in R
 
 ```
 
-Do the same as the previous question for the approriate OR operator.
+Do the same as the previous question for the appropriate OR operator.
 
 ```{r}
 
 ```
 
 
+In the example above for the square root, the variable `root2` has the square root of the number $2$.  Create a variable called `two` that multiples `root2 * root2`.  
+
+```{r}
+
+```
 
 
-In the example above for the square root, the variable `root2` has the square root of the number $2$.  Test the equality (e.g., use the `==` operator) of this varible times itself to the value $2$. Discuss this with your neighbor.  Does this make sense?
+Does the new variable, `two` equal `2` (test using equality operator do not look at it).
 
 ```{r}
 

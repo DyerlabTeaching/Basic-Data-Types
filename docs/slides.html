@@ -10,7 +10,7 @@
 <link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.555">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Rodney Dyer, PhD">
   <title>Basic Data Types</title>
@@ -44,7 +44,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -72,7 +72,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -86,7 +86,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -962,7 +962,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-09-03 10:59:21 EDT"</code></pre>
+<pre><code>[1] "2025-09-04 09:02:21 EDT"</code></pre>
 </div>
 </div>
 </div>
@@ -973,7 +973,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="fu">unclass</span>( <span class="fu">Sys.time</span>() )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1725375561</code></pre>
+<pre><code>[1] 1756990942</code></pre>
 </div>
 </div>
 </section>
@@ -1031,7 +1031,7 @@ Rodney Dyer, PhD
 </div>
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a>today</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-09-03"</code></pre>
+<pre><code>[1] "2025-09-04"</code></pre>
 </div>
 </div>
 </section>
@@ -1042,14 +1042,14 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a>today <span class="sc">-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-09-02"</code></pre>
+<pre><code>[1] "2025-09-03"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href=""></a><span class="fu">weekdays</span>( today )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Tuesday"</code></pre>
+<pre><code>[1] "Thursday"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1069,7 +1069,7 @@ Rodney Dyer, PhD
 <span id="cb90-2"><a href=""></a>days <span class="ot">&lt;-</span> today <span class="sc">-</span> hired </span>
 <span id="cb90-3"><a href=""></a>days </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 7314 days</code></pre>
+<pre><code>Time difference of 7680 days</code></pre>
 </div>
 </div>
 </section>
@@ -1079,7 +1079,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a>today <span class="sc">+</span> <span class="fu">months</span>(<span class="dv">1</span>)<span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">1</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">6</span>) <span class="sc">+</span> <span class="fu">hours</span>(<span class="dv">4</span>) <span class="sc">-</span> <span class="fu">minutes</span>(<span class="dv">35</span>) <span class="sc">+</span> <span class="fu">seconds</span>(<span class="dv">15</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-10-16 03:25:15 UTC"</code></pre>
+<pre><code>[1] "2025-10-17 03:25:15 UTC"</code></pre>
 </div>
 </div>
 </section>
@@ -1131,7 +1131,7 @@ Rodney Dyer, PhD
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a><span class="fu">today</span>() <span class="sc">-</span> <span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>) <span class="ot">-&gt;</span> daysAlive</span>
 <span id="cb102-2"><a href=""></a>daysAlive</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 20048 days</code></pre>
+<pre><code>Time difference of 20414 days</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1140,7 +1140,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a>daysAlive<span class="sc">/</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "1997-03-25"</code></pre>
+<pre><code>[1] "1997-09-24"</code></pre>
 </div>
 </div>
 </div>
@@ -1187,24 +1187,38 @@ function processMathHTML() {
 </tr>
 </tbody>
 </table>
-<section id="strptime" class="slide level2">
-<h2>Date-time Conversion Functions to and from Character</h2>
-<h3 id="description">Description</h3>
-<p>Functions to convert between character representations and objects of classes <code>"POSIXlt"</code> and <code>"POSIXct"</code> representing calendar dates and times.</p>
-<h3 id="usage">Usage</h3>
-<div class="sourceCode" id="cb107"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href=""></a><span class="do">## S3 method for class 'POSIXct'</span></span>
-<span id="cb107-2"><a href=""></a><span class="fu">format</span>(x, <span class="at">format =</span> <span class="st">""</span>, <span class="at">tz =</span> <span class="st">""</span>, <span class="at">usetz =</span> <span class="cn">FALSE</span>, ...)</span>
-<span id="cb107-3"><a href=""></a><span class="do">## S3 method for class 'POSIXlt'</span></span>
-<span id="cb107-4"><a href=""></a><span class="fu">format</span>(x, <span class="at">format =</span> <span class="st">""</span>, <span class="at">usetz =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb107-5"><a href=""></a>       <span class="at">digits =</span> <span class="fu">getOption</span>(<span class="st">"digits.secs"</span>), ...)</span>
-<span id="cb107-6"><a href=""></a></span>
-<span id="cb107-7"><a href=""></a><span class="do">## S3 method for class 'POSIXt'</span></span>
-<span id="cb107-8"><a href=""></a><span class="fu">as.character</span>(x, <span class="at">digits =</span> <span class="cf">if</span>(<span class="fu">inherits</span>(x, <span class="st">"POSIXlt"</span>)) <span class="dv">14</span>L <span class="cf">else</span> <span class="dv">6</span>L,</span>
-<span id="cb107-9"><a href=""></a>             <span class="at">OutDec =</span> <span class="st">"."</span>, ...)</span>
-<span id="cb107-10"><a href=""></a></span>
-<span id="cb107-11"><a href=""></a><span class="fu">strftime</span>(x, <span class="at">format =</span> <span class="st">""</span>, <span class="at">tz =</span> <span class="st">""</span>, <span class="at">usetz =</span> <span class="cn">FALSE</span>, ...)</span>
-<span id="cb107-12"><a href=""></a><span class="fu">strptime</span>(x, format, <span class="at">tz =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="arguments">Arguments</h3>
+
+
+<h2 id="strptime">Date-time Conversion Functions to and from Character</h2>
+
+<h3>Description</h3>
+
+<p>Functions to convert between character representations and objects of
+classes <code>"POSIXlt"</code> and <code>"POSIXct"</code> representing calendar
+dates and times.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre><code class="language-R">## S3 method for class 'POSIXct'
+format(x, format = "", tz = "", usetz = FALSE, ...)
+## S3 method for class 'POSIXlt'
+format(x, format = "", usetz = FALSE,
+       digits = getOption("digits.secs"), ...)
+
+## S3 method for class 'POSIXt'
+as.character(x, digits = if(inherits(x, "POSIXlt")) 14L else 6L,
+             OutDec = ".", ...)
+
+strftime(x, format = "", tz = "", usetz = FALSE, ...)
+strptime(x, format, tz = "")
+</code></pre>
+
+
+<h3>Arguments</h3>
+
+
 <table class="caption-top" data-quarto-postprocess="true">
 <tbody>
 <tr class="odd">
@@ -1716,13 +1730,12 @@ format(as.POSIXlt(c(-Inf,Inf,NaN,NA))) # were all NA
 </code></pre>
 
 
-</section></div>
+</div>
 
-</div></div></font></section><font size="-1">
-</font></section></div><font size="-1">
-</font></div><font size="-1">
+</div>
+</div>
 </font><p><font size="-1"></font></p>
-
+</section>
 <section id="this-is-the-next-slide" class="slide level2">
 <h2>This is the next slide</h2>
 <p>Here is the example.</p>
@@ -1730,6 +1743,9 @@ format(as.POSIXlt(c(-Inf,Inf,NaN,NA))) # were all NA
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -1749,9 +1765,9 @@ format(as.POSIXlt(c(-Inf,Inf,NaN,NA))) # were all NA
 <p><a href="https://dyerlab.org">Dyerlab</a></p>
 </div>
 </div>
-</section>
-    
-  
+</section></section>
+    </div>
+  </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="slides_files/libs/revealjs/dist/reveal.js"></script>
@@ -2032,18 +2048,7 @@ format(as.POSIXlt(c(-Inf,Inf,NaN,NA))) # were all NA
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -2075,7 +2080,29 @@ format(as.POSIXlt(c(-Inf,Inf,NaN,NA))) # were all NA
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2083,7 +2110,7 @@ format(as.POSIXlt(c(-Inf,Inf,NaN,NA))) # were all NA
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

@@ -1,0 +1,14 @@
+---
+title: "ENVS543-InClassNotes"
+editor: visual
+---
+
+
+```{r}
+x <- 23
+x
+Y <- "Bob"
+Y
+```
+
+

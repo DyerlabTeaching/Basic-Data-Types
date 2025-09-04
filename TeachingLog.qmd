@@ -13,4 +13,5 @@ title: "Teaching Log"
 ### Environmental Data Literacy
 
 -   8-28: Started slides up to [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/named-functions).
--   9-2: Finished slides and started [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html).
+-   9-2: Finished slides
+-   9-4: Worked all day on [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html).
