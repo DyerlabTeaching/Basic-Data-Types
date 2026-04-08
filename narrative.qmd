@@ -1,8 +1,6 @@
 ---
 title: "Basic Data Types"
-format: 
-  html:
-    toc: true
+format: html
 ---
 
 ![Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/photos/8OyKWQgBsKQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](media/markus-spiske-8OyKWQgBsKQ-unsplash.jpg)
@@ -56,33 +54,25 @@ x * y
 x / y
 ```
 
-You have the *exponential*:
+You have the *exponential* and *root*:
 
 ```{r}
-## x raised to the y
 x^y
-
-## the inverse of an exponent is a root, here is the 23rd root of 10
 x^(1/y)
 ```
 
-The *logarithmic*:
+The *logarithms* (natural, base 10, and arbitrary bases):
 
 ```{r}
-## the natural log
 log(x)
-
-## Base 10 log
 log(x,base=10)
 ```
 
-And the *modulus operator*:
+And the *modulus operator*, which is the remainder after division:
 
 ```{r}
 y %% x
 ```
-
-
 
 If you didn't know what this one is, don't worry.  The modulus is just the *remainder after division* like you did in grade school.  The above code means that *23 divided by 10 has a remainder of 3*.  I include it here just to highlight the fact that many of the operators that we will be working with in `R` are created by more than just a single symbol residing at the top row of your computer keyboard.  There are just too few symbos on the normal keyboard to represent the breath of operators.  The authors of `R` have decided that using combinations of symbols to handle these and you will get used to them in not time at all.
 
