@@ -576,9 +576,3 @@ max(df$Date) - min(df$Date)
 
 
 [^1]: If you get an error saying something like, "there is no package named lubridate" then use `install.packages("lubridate")` and install it.  You only need to do this once.
-
-
-
-## Questions
-
-If you have any questions for me specifically on this topic, please feel free to contact me directly or drop a post on the discussion board on [Canvas](https://canvas.vcu.edu).
