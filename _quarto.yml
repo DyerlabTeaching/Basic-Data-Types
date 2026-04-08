@@ -1,21 +1,8 @@
 project:
   title: "Basic Data Types"
   output-dir: docs
+  pre-render: _extensions/dyerlab/update-extension.sh
 
 format:
-  html:
-    toc: true
-    toc-title: Contents
-    toc-location: right
-    html-math-method: katex
-    self-contained: true
-    citations-hover: true
-    footnotes-hover: true
-    link-external-icon: true
-  revealjs:
-    self-contained: false
-    code-overflow: wrap
-    footer: "[Dyerlab](https://dyerlab.org)"
-  
-
-
+  dyerlab-html: default
+  dyerlab-revealjs: default
