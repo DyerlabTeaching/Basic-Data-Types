@@ -6,10 +6,10 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Rodney Dyer, PhD">
   <title>Basic Data Types</title>
@@ -758,7 +758,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="fu">Sys.time</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-04-10 20:46:32 EDT"</code></pre>
+<pre><code>[1] "2026-08-15 11:39:27 EDT"</code></pre>
 </div>
 </div>
 </div>
@@ -769,7 +769,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="fu">unclass</span>( <span class="fu">Sys.time</span>() )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1775868392</code></pre>
+<pre><code>[1] 1786808367</code></pre>
 </div>
 </div>
 </section>
@@ -827,7 +827,7 @@ Rodney Dyer, PhD
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a>today</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-04-10"</code></pre>
+<pre><code>[1] "2026-08-15"</code></pre>
 </div>
 </div>
 </section>
@@ -838,21 +838,21 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a>today <span class="sc">-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-04-09"</code></pre>
+<pre><code>[1] "2026-08-14"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href=""></a><span class="fu">weekdays</span>( today )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Friday"</code></pre>
+<pre><code>[1] "Saturday"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href=""></a><span class="fu">yday</span>( today )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 100</code></pre>
+<pre><code>[1] 227</code></pre>
 </div>
 </div>
 </section>
@@ -865,7 +865,7 @@ Rodney Dyer, PhD
 <span id="cb90-2"><a href=""></a>days <span class="ot">&lt;-</span> today <span class="sc">-</span> hired </span>
 <span id="cb90-3"><a href=""></a>days </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 7898 days</code></pre>
+<pre><code>Time difference of 8025 days</code></pre>
 </div>
 </div>
 </section>
@@ -875,7 +875,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a>today <span class="sc">+</span> <span class="fu">months</span>(<span class="dv">1</span>)<span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">1</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">6</span>) <span class="sc">+</span> <span class="fu">hours</span>(<span class="dv">4</span>) <span class="sc">-</span> <span class="fu">minutes</span>(<span class="dv">35</span>) <span class="sc">+</span> <span class="fu">seconds</span>(<span class="dv">15</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-05-23 03:25:15 UTC"</code></pre>
+<pre><code>[1] "2026-09-28 03:25:15 UTC"</code></pre>
 </div>
 </div>
 </section>
@@ -927,7 +927,7 @@ Rodney Dyer, PhD
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a><span class="fu">today</span>() <span class="sc">-</span> <span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>) <span class="ot">-&gt;</span> daysAlive</span>
 <span id="cb102-2"><a href=""></a>daysAlive</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 20632 days</code></pre>
+<pre><code>Time difference of 20759 days</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -935,7 +935,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a>daysAlive<span class="sc">/</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "1998-01-11"</code></pre>
+<pre><code>[1] "1998-03-16"</code></pre>
 </div>
 </div>
 </div>
@@ -1442,14 +1442,27 @@ truncated at 255 bytes).
 
 <h3>References</h3>
 
-<p>International Organization for Standardization (2004, 2000, ...)
-‘ISO 8601.  Data elements and interchange formats –
-Information interchange – Representation of dates and times.’,
-slightly updated to International Organization for Standardization (2019)
-‘ISO 8601-1:2019.  Date and time – Representations for
-information interchange – Part 1: Basic rules’, and further amended
-in 2022.
-For links to versions available on-line see (at the time of writing)
+<span id="reference+strptime.Rd+R+3AInternational_Organization_for_Standardization+3A2000"></span><p>International Organization for Standardization (2000).
+<em>Data Elements and Interchange Formats — Information Interchange — Representation of Dates and Times</em>, ISO 8601:2000 edition.
+International Organization for Standardization, Geneva, Switzerland.
+<a href="https://www.iso.org/standard/26780.html">https://www.iso.org/standard/26780.html</a>.
+</p><p>
+<span id="reference+strptime.Rd+R+3AInternational_Organization_for_Standardization+3A2004"></span>International Organization for Standardization (2004).
+<em>Data Elements and Interchange Formats — Information Interchange — Representation of Dates and Times</em>, ISO 8601:2004 edition.
+International Organization for Standardization, Geneva, Switzerland.
+<a href="https://www.iso.org/standard/40874.html">https://www.iso.org/standard/40874.html</a>.
+</p><p>
+<span id="reference+strptime.Rd+R+3AInternational_Organization_for_Standardization+3A2019"></span>International Organization for Standardization (2019).
+<em>Date and Time — Representations for Information Interchange Part 1: Basic Rules</em>, ISO 8601-1:2019 edition.
+International Organization for Standardization, Geneva, Switzerland.
+<a href="https://www.iso.org/standard/70907.html">https://www.iso.org/standard/70907.html</a>.
+</p><p>
+<span id="reference+strptime.Rd+R+3AInternational_Organization_for_Standardization+3A2022"></span>International Organization for Standardization (2022).
+<em>Date and Time — Representations for Information Interchange Part 1: Basic Rules Amendment 1: Technical Corrections</em>, ISO 8601-1:2019/Amd 1 edition.
+International Organization for Standardization, Geneva, Switzerland.
+<a href="https://www.iso.org/standard/81801.html">https://www.iso.org/standard/81801.html</a>.
+</p>
+<p>For links to versions available on-line see (at the time of writing)
 <a href="https://dotat.at/tmp/ISO_8601-2004_E.pdf">https://dotat.at/tmp/ISO_8601-2004_E.pdf</a> and
 <a href="https://www.qsl.net/g1smd/isopdf.htm">https://www.qsl.net/g1smd/isopdf.htm</a>; for information on the
 current official version, see <a href="https://www.iso.org/iso/iso8601">https://www.iso.org/iso/iso8601</a> and
