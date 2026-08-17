@@ -351,7 +351,7 @@ Rodney Dyer, PhD
 </thead>
 <tbody>
 <tr class="odd">
-<td>:: :::</td>
+<td><code>:: :::</code></td>
 <td>access variables in a namespace</td>
 </tr>
 <tr class="even">
@@ -758,7 +758,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="fu">Sys.time</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-08-17 14:28:02 EDT"</code></pre>
+<pre><code>[1] "2026-08-17 15:50:17 EDT"</code></pre>
 </div>
 </div>
 </div>
@@ -769,7 +769,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="fu">unclass</span>( <span class="fu">Sys.time</span>() )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1786991282</code></pre>
+<pre><code>[1] 1786996218</code></pre>
 </div>
 </div>
 </section>
@@ -827,7 +827,7 @@ Rodney Dyer, PhD
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a>today</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-08-17 14:28:02 EDT"</code></pre>
+<pre><code>[1] "2026-08-17 15:50:17 EDT"</code></pre>
 </div>
 </div>
 </section>
@@ -838,7 +838,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a>today <span class="sc">-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-08-17 14:28:01 EDT"</code></pre>
+<pre><code>[1] "2026-08-17 15:50:16 EDT"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -865,7 +865,7 @@ Rodney Dyer, PhD
 <span id="cb90-2"><a href=""></a>days <span class="ot">&lt;-</span> today <span class="sc">-</span> hired </span>
 <span id="cb90-3"><a href=""></a>days </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-08-17 10:57:07 EDT"</code></pre>
+<pre><code>[1] "2026-08-17 12:19:22 EDT"</code></pre>
 </div>
 </div>
 </section>
@@ -875,7 +875,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a>today <span class="sc">+</span> <span class="fu">months</span>(<span class="dv">1</span>)<span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">1</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">6</span>) <span class="sc">+</span> <span class="fu">hours</span>(<span class="dv">4</span>) <span class="sc">-</span> <span class="fu">minutes</span>(<span class="dv">35</span>) <span class="sc">+</span> <span class="fu">seconds</span>(<span class="dv">15</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-09-30 17:53:17 EDT"</code></pre>
+<pre><code>[1] "2026-09-30 19:15:32 EDT"</code></pre>
 </div>
 </div>
 </section>
@@ -929,7 +929,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a>howLong</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 8029.603 days</code></pre>
+<pre><code>Time difference of 8029.66 days</code></pre>
 </div>
 </div>
 </div>
@@ -940,7 +940,7 @@ Rodney Dyer, PhD
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a><span class="fu">now</span>() <span class="sc">-</span> <span class="fu">mdy_hm</span>(<span class="st">"10/14/1969 04:20"</span>, <span class="at">tz=</span><span class="st">"US/Pacific"</span>) <span class="ot">-&gt;</span> daysAlive</span>
 <span id="cb104-2"><a href=""></a>daysAlive</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 20761.3 days</code></pre>
+<pre><code>Time difference of 20761.35 days</code></pre>
 </div>
 </div>
 <div class="fragment">

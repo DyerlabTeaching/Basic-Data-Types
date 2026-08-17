@@ -158,7 +158,7 @@ You can find this list by `?Syntax` and the help system will show you the follow
 
 Operator          | 	Description  
 ------------------|--------------------------------------
-:: :::	          | access variables in a namespace
+`:: :::`	          | access variables in a namespace
 $ @	              | component / slot extraction
 [ [[              | indexing
 ^                 | exponentiation (right to left)
