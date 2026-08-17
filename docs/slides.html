@@ -311,7 +311,7 @@ Rodney Dyer, PhD
 </div>
 </div>
 <div class="fragment fade-in">
-<p>You can also view the value in a variable by looking in the <em>Environment</em> tab in RStudio</p>
+<p>You can also view the value in a variable by looking in the <em>Environment</em> tab</p>
 </div>
 </section>
 <section id="operators" class="slide level2">
@@ -758,7 +758,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="fu">Sys.time</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-08-15 11:39:27 EDT"</code></pre>
+<pre><code>[1] "2026-08-17 14:28:02 EDT"</code></pre>
 </div>
 </div>
 </div>
@@ -769,7 +769,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href=""></a><span class="fu">unclass</span>( <span class="fu">Sys.time</span>() )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1786808367</code></pre>
+<pre><code>[1] 1786991282</code></pre>
 </div>
 </div>
 </section>
@@ -820,14 +820,14 @@ Rodney Dyer, PhD
 <h2>Actual Today</h2>
 <p>There are also a few built-in functions that we can use to help reduce our <em>need to type</em>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href=""></a>today <span class="ot">&lt;-</span> <span class="fu">today</span>()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href=""></a>today <span class="ot">&lt;-</span> <span class="fu">now</span>()</span>
 <span id="cb80-2"><a href=""></a><span class="fu">class</span>(today)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Date"</code></pre>
+<pre><code>[1] "POSIXct" "POSIXt" </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href=""></a>today</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-08-15"</code></pre>
+<pre><code>[1] "2026-08-17 14:28:02 EDT"</code></pre>
 </div>
 </div>
 </section>
@@ -838,21 +838,21 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a>today <span class="sc">-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-08-14"</code></pre>
+<pre><code>[1] "2026-08-17 14:28:01 EDT"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href=""></a><span class="fu">weekdays</span>( today )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Saturday"</code></pre>
+<pre><code>[1] "Monday"</code></pre>
 </div>
 </div>
 <p>&nbsp;</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href=""></a><span class="fu">yday</span>( today )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 227</code></pre>
+<pre><code>[1] 229</code></pre>
 </div>
 </div>
 </section>
@@ -865,7 +865,7 @@ Rodney Dyer, PhD
 <span id="cb90-2"><a href=""></a>days <span class="ot">&lt;-</span> today <span class="sc">-</span> hired </span>
 <span id="cb90-3"><a href=""></a>days </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 8025 days</code></pre>
+<pre><code>[1] "2026-08-17 10:57:07 EDT"</code></pre>
 </div>
 </div>
 </section>
@@ -875,7 +875,7 @@ Rodney Dyer, PhD
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a>today <span class="sc">+</span> <span class="fu">months</span>(<span class="dv">1</span>)<span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">1</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">6</span>) <span class="sc">+</span> <span class="fu">hours</span>(<span class="dv">4</span>) <span class="sc">-</span> <span class="fu">minutes</span>(<span class="dv">35</span>) <span class="sc">+</span> <span class="fu">seconds</span>(<span class="dv">15</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-09-28 03:25:15 UTC"</code></pre>
+<pre><code>[1] "2026-09-30 17:53:17 EDT"</code></pre>
 </div>
 </div>
 </section>
@@ -884,10 +884,10 @@ Rodney Dyer, PhD
 <p>Just like making a date, we can make time elements.</p>
 <p>&nbsp;</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href=""></a>classtime <span class="ot">&lt;-</span> <span class="fu">mdy_hms</span>(<span class="st">"09/01/2022 12:30 PM"</span>)</span>
-<span id="cb94-2"><a href=""></a>classtime</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href=""></a>adult_beverage_time <span class="ot">&lt;-</span> <span class="fu">mdy_hms</span>(<span class="st">"08/20/2026 7:30:00"</span>)</span>
+<span id="cb94-2"><a href=""></a>adult_beverage_time</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2020-09-01 22:12:30 UTC"</code></pre>
+<pre><code>[1] "2026-08-20 07:30:00 UTC"</code></pre>
 </div>
 </div>
 </section>
@@ -898,10 +898,19 @@ Rodney Dyer, PhD
 <h2>Setting a Time Zone</h2>
 <p>The time zone is best set when you create the date/time object.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href=""></a>today <span class="ot">&lt;-</span> <span class="fu">mdy_hm</span>(<span class="st">"09/01/2022 12:30 PM"</span>, <span class="at">tz=</span><span class="st">"US/Eastern"</span>)</span>
-<span id="cb96-2"><a href=""></a>today</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href=""></a><span class="fu">tz</span>( adult_beverage_time )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-09-01 12:30:00 EDT"</code></pre>
+<pre><code>[1] "UTC"</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>&nbsp;</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href=""></a><span class="fu">tz</span>( adult_beverage_time ) <span class="ot">&lt;-</span> <span class="st">"US/Eastern"</span></span>
+<span id="cb98-2"><a href=""></a>adult_beverage_time</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2026-08-20 07:30:00 EDT"</code></pre>
+</div>
 </div>
 </div>
 </section>
@@ -909,45 +918,49 @@ Rodney Dyer, PhD
 <h2>Time Classes</h2>
 <p>However, they <em>MUST</em> be compatible (these are not because hired has to timezone).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href=""></a>hired <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">"2004/08/23"</span>, <span class="at">tz=</span><span class="st">"US/Eastern"</span>)</span>
-<span id="cb98-2"><a href=""></a>howLong <span class="ot">&lt;-</span> today <span class="sc">-</span> hired</span>
-<span id="cb98-3"><a href=""></a><span class="fu">class</span>( howLong )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href=""></a>hired <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">"2004/08/23"</span>, <span class="at">tz=</span><span class="st">"US/Eastern"</span>)</span>
+<span id="cb100-2"><a href=""></a>howLong <span class="ot">&lt;-</span> today <span class="sc">-</span> hired</span>
+<span id="cb100-3"><a href=""></a><span class="fu">class</span>( howLong )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "difftime"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href=""></a>howLong</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a>howLong</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 6583.521 days</code></pre>
+<pre><code>Time difference of 8029.603 days</code></pre>
+</div>
 </div>
 </div>
 </section>
 <section id="examples-1" class="slide level2">
 <h2>Examples</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a><span class="fu">today</span>() <span class="sc">-</span> <span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>) <span class="ot">-&gt;</span> daysAlive</span>
-<span id="cb102-2"><a href=""></a>daysAlive</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a><span class="fu">now</span>() <span class="sc">-</span> <span class="fu">mdy_hm</span>(<span class="st">"10/14/1969 04:20"</span>, <span class="at">tz=</span><span class="st">"US/Pacific"</span>) <span class="ot">-&gt;</span> daysAlive</span>
+<span id="cb104-2"><a href=""></a>daysAlive</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 20759 days</code></pre>
+<pre><code>Time difference of 20761.3 days</code></pre>
 </div>
 </div>
 <div class="fragment">
 <h3 id="dyers-half-life">Dyer’s Half Life</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a>daysAlive<span class="sc">/</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href=""></a>daysAlive<span class="sc">/</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "1998-03-16"</code></pre>
+<pre><code>[1] "1998-03-17"</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="when-is-dyer-20000-days-old" class="slide level2">
-<h2>When Is Dyer 20,000 Days Old</h2>
+<section id="when-is-dyer-21000-days-old" class="slide level2">
+<h2>When Is Dyer 21,000 Days Old?</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href=""></a><span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">20000</span>) <span class="ot">-&gt;</span> day20K</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href=""></a><span class="fu">mdy</span>(<span class="st">"10/14/1969"</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">21000</span>) <span class="ot">-&gt;</span> days21K</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>&nbsp;</p>
 
-<img data-src="media/format.png" class="r-stretch"><p>On Wednesday, July 17, 2024 Dyer will be 20,000 days old.</p>
+<img data-src="media/format.png" class="r-stretch"><p>On Tuesday, April 13, 2027 Dyer will be 21,000 days old. 🍻</p>
 </section>
 <section id="more-date-operations" class="slide level2">
 <h2>More Date Operations</h2>
@@ -1567,11 +1580,6 @@ format(as.POSIXlt(c(-Inf,Inf,NaN,NA))) # were all NA
 </div>
 </div>
 </font><p><font size="-1"></font></p>
-</section>
-<section id="this-is-the-next-slide" class="slide level2">
-<h2>This is the next slide</h2>
-<p>Here is the example.</p>
-<p><a href="https://example.com">Hello</a></p>
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions</h2>

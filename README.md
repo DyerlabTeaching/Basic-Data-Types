@@ -6,7 +6,7 @@
 
 ## Impetus
 
-For us to be effective at analyzing a broad range of objects, we need to have appropriate representations of measurements and objects in the real world that we can use in our analyses.  
+To be effective at analyzing a broad range of objects, we need appropriate representations of measurements and real-world objects.
 
 ## Module Learning Objectives
 
@@ -27,8 +27,7 @@ This module has the following two learning objectives
 ## Content
 
 This learning module has the following components:
-
- - [Video](https://www.loom.com/share/bfb38096deaf40ce81c04abfb6b24ee8?sid=a6d43f6d-b41f-4175-b5b4-dca9bdebb450) of the lecture content.  
+  
  - [Slides](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html) presented on the video.  
  - An [In-Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html) for interactive work on basic data types and to give some confidence in the practitioner.
  - A longer [narrative](https://dyerlabteaching.github.io/Basic-Data-Types/narrative.html) on the topic.    

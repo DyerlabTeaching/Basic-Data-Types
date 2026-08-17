@@ -188,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
-<p>If you didn’t know what this one is, don’t worry. The modulus is just the <em>remainder after division</em> like you did in grade school. The above code means that <em>23 divided by 10 has a remainder of 3</em>. I include it here just to highlight the fact that many of the operators that we will be working with in <code>R</code> are created by more than just a single symbol residing at the top row of your computer keyboard. There are just too few symbols on the normal keyboard to represent the breadth of operators. <mark>The authors of <code>R</code> have decided that using combinations of symbols to handle these and you will get used to them in not time at all.</mark></p>
+<p>If you didn’t know what this one is, don’t worry. The modulus is just the <em>remainder after division</em> like you did in grade school. The above code means that <em>23 divided by 10 has a remainder of 3</em>. I include it here just to highlight the fact that many of the operators that we will be working with in <code>R</code> are created by more than just a single symbol residing at the top row of your computer keyboard. There are just too few symbols on the normal keyboard to represent the breadth of operators. The authors of <code>R</code> have decided that using combinations of symbols to handle these situations—you will get used to them in time.</p>
 </section>
 <section id="introspection-coercion" class="level3">
 <h3 class="anchored" data-anchor-id="introspection-coercion">Introspection &amp; Coercion</h3>
@@ -482,7 +482,7 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<p><mark>Coercion of something else to a <code>Logical</code> is more case-specific.</mark></p>
+<p>Coercion of a variable that is not a <code>logical</code> into a <code>Logical</code> is more case-specific.</p>
 <p>From <code>character</code> data.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>( <span class="st">"TRUE"</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -534,16 +534,16 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 <p>This topic covers the basics of how we put together data based upon date and time objects. For this, we will use the following data frame with a single column of data representing dates as they are written in the US.</p>
 <p>There are several challenges associated with working with date and time objects. To those of us who are reading this with a background of how US time and date formats are read, we can easily interpret data objects as Month/Day/Year formats (e.g., “2/14/2018”), and is commonly represented in the kind of input data we work in <code>R</code> with as with a string of characters. Dates and times are sticky things in data analysis because they do not work the way we think they should. Here are some wrinkles:</p>
 <ol type="1">
-<li>There are many types of calendars, <mark>we use the Julian calendar</mark>. However, there are many other calendars that are in use that we may run into. Each of these calendars has a different starting year (e.g., in the Assyrian calendar it is year 6770, it is 4718 in the Chinese calendar, 2020 in the Gregorian, and 1442 in the Islamic calendar).</li>
+<li>There are many types of calendars, we use the Julian calendar. However, there are many other calendars that are in use that we may run into. Each of these calendars has a different starting year (e.g., in the Assyrian calendar it is year 6770, it is 4718 in the Chinese calendar, 2020 in the Gregorian, and 1442 in the Islamic calendar).</li>
 <li>Western calendar has leap years (+1 day in February) as well as leap seconds because it is based on the rotation around the sun, others are based upon the lunar cycle and have other corrections.</li>
-<li>On this planet, we have 24 different time zones. Some states (looking at you Arizona) don’t feel it necessary to follow the other states around so they may be the same as PST some of the year and the same as MST the rest of the year. The province of Newfoundland decided to be half-way between time zones so they are <mark>GMT-2:30</mark>. Some states have more than one time zone even if they are not large in size (hello Indiana).</li>
+<li>On this planet, we have 24 different time zones. Some states (looking at you Arizona) don’t feel it necessary to follow the other states around so they may be the same as PST some of the year and the same as MST the rest of the year. The province of Newfoundland decided to be half-way between time zones so they are GMT-2:30. Some states have more than one time zone even if they are not large in size (hello Indiana).</li>
 <li>Dates and time are made up of odd units, 60-seconds a minute, 60-minutes an hour, 24-hours a day, 7-days a week, 2-weeks a fortnight, 28,29,30,or 31-days in a month, 365 or 366 days in a year, 100 years in a century, etc.</li>
 </ol>
 <p>Fortunately, some smart programmers have figured this out for us already. What they did was make the second as the base unit of time and designated 00:00:00 on 1 January 1970 as the <em>unix epoch</em>. Time on most modern computers is measured from that starting point. It is much easier to measure the difference between two points in time using the seconds since unix epoch <em>and then</em> translate it into one or more of these calendars than to deal with all the different calendars each time. So under the hood, much of the date and time issues are kept in terms of epoch seconds.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>( <span class="fu">Sys.time</span>() )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1786808365</code></pre>
+<pre><code>[1] 1786991280</code></pre>
 </div>
 </div>
 <section id="basic-date-objects" class="level3">
@@ -551,10 +551,10 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 <p><code>R</code> has some basic date functionality built into it. One of the easiest ways to get a date object created is to specify a date as a character string and then coerce it into a date object. By default, this requires us to represent the date objects as “YEAR-MONTH-DAY” with padding <code>0</code> values for any integer of month or date below 9 (e.g., must be two-digits).</p>
 <p>So for example, we can specify a date object as:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>class_start <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2021-01-15"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>class_start <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2026-08-18"</span>)</span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>class_start</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2021-01-15"</code></pre>
+<pre><code>[1] "2026-08-18"</code></pre>
 </div>
 </div>
 <p>And it is of type:</p>
@@ -564,12 +564,12 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 <pre><code>[1] "Date"</code></pre>
 </div>
 </div>
-<p>If you want to make a date from a different format, <mark>you need to specify what elements within the string representation using format codes.</mark> These codes (and many more) can be found by looking at <code>?strptime</code>.</p>
+<p>If you want to make a date from a different format, you must specify which elements within the string representation you want represnted using specific formatting codes. These codes (and many more) can be found by looking at <code>?strptime</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>class_end <span class="ot">&lt;-</span> <span class="fu">as.Date</span>( <span class="st">"5/10/21"</span>, <span class="at">format =</span> <span class="st">"%m/%d/%y"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>class_end <span class="ot">&lt;-</span> <span class="fu">as.Date</span>( <span class="st">"12/03/26"</span>, <span class="at">format =</span> <span class="st">"%m/%d/%y"</span>)</span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>class_end</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2021-05-10"</code></pre>
+<pre><code>[1] "2026-12-03"</code></pre>
 </div>
 </div>
 <p>I like to use some higher-level date functions from the <code>lubridate</code> library. If you don’t have it installed, do so using the normal approach.</p>
@@ -590,30 +590,28 @@ Attaching package: 'lubridate'</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>semester <span class="ot">&lt;-</span> <span class="fu">seq</span>( class_start, class_end, <span class="at">by =</span> <span class="st">"1 day"</span>)</span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>semester</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] "2021-01-15" "2021-01-16" "2021-01-17" "2021-01-18" "2021-01-19"
-  [6] "2021-01-20" "2021-01-21" "2021-01-22" "2021-01-23" "2021-01-24"
- [11] "2021-01-25" "2021-01-26" "2021-01-27" "2021-01-28" "2021-01-29"
- [16] "2021-01-30" "2021-01-31" "2021-02-01" "2021-02-02" "2021-02-03"
- [21] "2021-02-04" "2021-02-05" "2021-02-06" "2021-02-07" "2021-02-08"
- [26] "2021-02-09" "2021-02-10" "2021-02-11" "2021-02-12" "2021-02-13"
- [31] "2021-02-14" "2021-02-15" "2021-02-16" "2021-02-17" "2021-02-18"
- [36] "2021-02-19" "2021-02-20" "2021-02-21" "2021-02-22" "2021-02-23"
- [41] "2021-02-24" "2021-02-25" "2021-02-26" "2021-02-27" "2021-02-28"
- [46] "2021-03-01" "2021-03-02" "2021-03-03" "2021-03-04" "2021-03-05"
- [51] "2021-03-06" "2021-03-07" "2021-03-08" "2021-03-09" "2021-03-10"
- [56] "2021-03-11" "2021-03-12" "2021-03-13" "2021-03-14" "2021-03-15"
- [61] "2021-03-16" "2021-03-17" "2021-03-18" "2021-03-19" "2021-03-20"
- [66] "2021-03-21" "2021-03-22" "2021-03-23" "2021-03-24" "2021-03-25"
- [71] "2021-03-26" "2021-03-27" "2021-03-28" "2021-03-29" "2021-03-30"
- [76] "2021-03-31" "2021-04-01" "2021-04-02" "2021-04-03" "2021-04-04"
- [81] "2021-04-05" "2021-04-06" "2021-04-07" "2021-04-08" "2021-04-09"
- [86] "2021-04-10" "2021-04-11" "2021-04-12" "2021-04-13" "2021-04-14"
- [91] "2021-04-15" "2021-04-16" "2021-04-17" "2021-04-18" "2021-04-19"
- [96] "2021-04-20" "2021-04-21" "2021-04-22" "2021-04-23" "2021-04-24"
-[101] "2021-04-25" "2021-04-26" "2021-04-27" "2021-04-28" "2021-04-29"
-[106] "2021-04-30" "2021-05-01" "2021-05-02" "2021-05-03" "2021-05-04"
-[111] "2021-05-05" "2021-05-06" "2021-05-07" "2021-05-08" "2021-05-09"
-[116] "2021-05-10"</code></pre>
+<pre><code>  [1] "2026-08-18" "2026-08-19" "2026-08-20" "2026-08-21" "2026-08-22"
+  [6] "2026-08-23" "2026-08-24" "2026-08-25" "2026-08-26" "2026-08-27"
+ [11] "2026-08-28" "2026-08-29" "2026-08-30" "2026-08-31" "2026-09-01"
+ [16] "2026-09-02" "2026-09-03" "2026-09-04" "2026-09-05" "2026-09-06"
+ [21] "2026-09-07" "2026-09-08" "2026-09-09" "2026-09-10" "2026-09-11"
+ [26] "2026-09-12" "2026-09-13" "2026-09-14" "2026-09-15" "2026-09-16"
+ [31] "2026-09-17" "2026-09-18" "2026-09-19" "2026-09-20" "2026-09-21"
+ [36] "2026-09-22" "2026-09-23" "2026-09-24" "2026-09-25" "2026-09-26"
+ [41] "2026-09-27" "2026-09-28" "2026-09-29" "2026-09-30" "2026-10-01"
+ [46] "2026-10-02" "2026-10-03" "2026-10-04" "2026-10-05" "2026-10-06"
+ [51] "2026-10-07" "2026-10-08" "2026-10-09" "2026-10-10" "2026-10-11"
+ [56] "2026-10-12" "2026-10-13" "2026-10-14" "2026-10-15" "2026-10-16"
+ [61] "2026-10-17" "2026-10-18" "2026-10-19" "2026-10-20" "2026-10-21"
+ [66] "2026-10-22" "2026-10-23" "2026-10-24" "2026-10-25" "2026-10-26"
+ [71] "2026-10-27" "2026-10-28" "2026-10-29" "2026-10-30" "2026-10-31"
+ [76] "2026-11-01" "2026-11-02" "2026-11-03" "2026-11-04" "2026-11-05"
+ [81] "2026-11-06" "2026-11-07" "2026-11-08" "2026-11-09" "2026-11-10"
+ [86] "2026-11-11" "2026-11-12" "2026-11-13" "2026-11-14" "2026-11-15"
+ [91] "2026-11-16" "2026-11-17" "2026-11-18" "2026-11-19" "2026-11-20"
+ [96] "2026-11-21" "2026-11-22" "2026-11-23" "2026-11-24" "2026-11-25"
+[101] "2026-11-26" "2026-11-27" "2026-11-28" "2026-11-29" "2026-11-30"
+[106] "2026-12-01" "2026-12-02" "2026-12-03"</code></pre>
 </div>
 </div>
 <p>Some helpful functions include the Julian Ordinal Day (e.g., number of days since the start of the year).</p>
@@ -621,7 +619,7 @@ Attaching package: 'lubridate'</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>ordinal_day <span class="ot">&lt;-</span> <span class="fu">yday</span>( semester[<span class="dv">102</span>] )</span>
 <span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>ordinal_day</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 116</code></pre>
+<pre><code>[1] 331</code></pre>
 </div>
 </div>
 <p>The weekday as an integer (0-6 starting on Sunday), which I use to index the named values.</p>
@@ -630,7 +628,7 @@ Attaching package: 'lubridate'</code></pre>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">wday</span>( semester[<span class="dv">32</span>] )</span>
 <span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>days_of_week[ x ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Monday"</code></pre>
+<pre><code>[1] "Friday"</code></pre>
 </div>
 </div>
 <p>Since we did not specify a time, things like <code>hour()</code> and <code>minute()</code> do not provide any usable information.</p>
@@ -640,13 +638,24 @@ Attaching package: 'lubridate'</code></pre>
 <p>To add time to the date objects, we need to specify both date and time specifically. Here are some example data:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">Date =</span> <span class="fu">c</span>(<span class="st">"8/21/2004 7:33:51 AM"</span>,</span>
-<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"7/12/2008 9:23:08 PM"</span>,</span>
-<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"2/14/2010 8:18:30 AM"</span>,</span>
-<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"12/23/2018 11:11:45 PM"</span>,</span>
-<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"2/1/2019 4:42:00 PM"</span>,</span>
-<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"5/17/2012 1:23:23 AM"</span>,</span>
-<span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"12/11/2020 9:48:02 PM"</span>) )</span>
-<span id="cb108-8"><a href="#cb108-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"7/12/2010 9:23:08 PM"</span>,</span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"2/14/2022 8:18:30 AM"</span>,</span>
+<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"12/23/2025 11:11:45 PM"</span>,</span>
+<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"2/1/2026 4:42:00 PM"</span>,</span>
+<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"5/17/2026 1:23:23 AM"</span>,</span>
+<span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"12/11/2026 9:48:02 PM"</span>) )</span>
+<span id="cb108-8"><a href="#cb108-8" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    Date
+1   8/21/2004 7:33:51 AM
+2   7/12/2010 9:23:08 PM
+3   2/14/2022 8:18:30 AM
+4 12/23/2025 11:11:45 PM
+5    2/1/2026 4:42:00 PM
+6   5/17/2026 1:23:23 AM
+7  12/11/2026 9:48:02 PM</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        Date   
  Length   : 7  
@@ -669,9 +678,9 @@ Attaching package: 'lubridate'</code></pre>
 - timezone<br>
 - <code>/</code> separating date objects<br>
 - <code>:</code> separating time objects</p>
-<p>To make the format string, we need to look up how to encode these items. The items in <code>df</code> for a date &amp; time object such as 2/1/2019 4:42:00 PM have the format string:</p>
+<p>To make the format string, we need to look up how to encode these items. The items in <code>df</code> for a date &amp; time object such as 2/1/2026 4:42:00 PM have the format string:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>format <span class="ot">&lt;-</span> <span class="st">"%m/%d/%Y %I:%M:%S %p"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>format <span class="ot">&lt;-</span> <span class="st">"%m/%d/%Y %I:%M:%S %p"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we can convert the character string in the data frame to a date and time object.</p>
 </section>
@@ -679,118 +688,116 @@ Attaching package: 'lubridate'</code></pre>
 <h3 class="anchored" data-anchor-id="lubridate">Lubridate</h3>
 <p>Instead of using the built-in <code>as.Date()</code> functionality, I like the <code>lubridate</code> library<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> as it has a lot of additional functionality that we’ll play with a bit later.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">parse_date_time</span>( df<span class="sc">$</span>Date, </span>
-<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">orders=</span>format, </span>
-<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">tz =</span> <span class="st">"EST"</span> )</span>
-<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">parse_date_time</span>( df<span class="sc">$</span>Date, </span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">orders=</span>format, </span>
+<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">tz =</span> <span class="st">"EST"</span> )</span>
+<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Date                    
  Min.   :2004-08-21 07:33:51  
- 1st Qu.:2009-04-29 14:50:49  
- Median :2012-05-17 01:23:23  
- Mean   :2013-07-11 07:28:39  
- 3rd Qu.:2019-01-12 19:56:52  
- Max.   :2020-12-11 21:48:02  </code></pre>
+ 1st Qu.:2016-04-29 02:50:49  
+ Median :2025-12-23 23:11:45  
+ Mean   :2020-05-19 17:45:48  
+ 3rd Qu.:2026-03-25 21:02:41  
+ Max.   :2026-12-11 21:48:02  </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( df<span class="sc">$</span>Date )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( df<span class="sc">$</span>Date )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "POSIXct" "POSIXt" </code></pre>
 </div>
 </div>
 <p>Now, we can ask <em>Date-like</em> questions about the data such as what day of the week was the first sample taken?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">weekdays</span>( df<span class="sc">$</span>Date[<span class="dv">1</span>] )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">weekdays</span>( df<span class="sc">$</span>Date[<span class="dv">1</span>] )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Saturday"</code></pre>
 </div>
 </div>
 <p>What is the range of dates?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>( df<span class="sc">$</span>Date )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>( df<span class="sc">$</span>Date )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2004-08-21 07:33:51 EST" "2020-12-11 21:48:02 EST"</code></pre>
+<pre><code>[1] "2004-08-21 07:33:51 EST" "2026-12-11 21:48:02 EST"</code></pre>
 </div>
 </div>
 <p>What is the median of samples</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>( df<span class="sc">$</span>Date )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>( df<span class="sc">$</span>Date )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2012-05-17 01:23:23 EST"</code></pre>
+<pre><code>[1] "2025-12-23 23:11:45 EST"</code></pre>
 </div>
 </div>
 <p>and what julian ordinal day (e.g., how many days since start of the year) is the last record.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yday</span>( df<span class="sc">$</span>Date[<span class="dv">4</span>] )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">yday</span>( df<span class="sc">$</span>Date[<span class="dv">4</span>] )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 357</code></pre>
 </div>
 </div>
 <p>Just for fun, I’ll add a column to the data that has weekday.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Weekday <span class="ot">&lt;-</span> <span class="fu">weekdays</span>( df<span class="sc">$</span>Date )</span>
-<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Weekday <span class="ot">&lt;-</span> <span class="fu">weekdays</span>( df<span class="sc">$</span>Date )</span>
+<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Date  Weekday
 1 2004-08-21 07:33:51 Saturday
-2 2008-07-12 21:23:08 Saturday
-3 2010-02-14 08:18:30   Sunday
-4 2018-12-23 23:11:45   Sunday
-5 2019-02-01 16:42:00   Friday
-6 2012-05-17 01:23:23 Thursday
-7 2020-12-11 21:48:02   Friday</code></pre>
+2 2010-07-12 21:23:08   Monday
+3 2022-02-14 08:18:30   Monday
+4 2025-12-23 23:11:45  Tuesday
+5 2026-02-01 16:42:00   Sunday
+6 2026-05-17 01:23:23   Sunday
+7 2026-12-11 21:48:02   Friday</code></pre>
 </div>
 </div>
 <p>However, we should probably turn it into a factor (e.g., a data type with pre-defined levels—and for us here—an intrinsic order of the levels).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Weekday <span class="ot">&lt;-</span> <span class="fu">factor</span>( df<span class="sc">$</span>Weekday, </span>
-<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">ordered =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels =</span> days_of_week</span>
-<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a>                        )</span>
-<span id="cb125-5"><a href="#cb125-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df<span class="sc">$</span>Weekday )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Weekday <span class="ot">&lt;-</span> <span class="fu">factor</span>( df<span class="sc">$</span>Weekday, </span>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">ordered =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels =</span> days_of_week</span>
+<span id="cb127-4"><a href="#cb127-4" aria-hidden="true" tabindex="-1"></a>                        )</span>
+<span id="cb127-5"><a href="#cb127-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df<span class="sc">$</span>Weekday )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Sunday    Monday   Tuesday Wednesday  Thursday    Friday  Saturday 
-        2         0         0         0         1         2         2 </code></pre>
+        2         2         1         0         0         1         1 </code></pre>
 </div>
 </div>
 </section>
 <section id="filtering-on-date-objects" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-on-date-objects">Filtering on Date Objects</h3>
-<p>We can easily filter the content within a <code>data.frame</code> using some helper functions such as <code>hour()</code>, <code>minute()</code>, <mark><code>weekday()</code></mark>, etc. Here are some examples including pulling out the weekends.</p>
+<p>We can easily filter the content within a <code>data.frame</code> using some helper functions such as <code>hour()</code>, <code>minute()</code>, <code>weekday()</code>, etc. Here are some examples including pulling out the weekends.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a>weekends <span class="ot">&lt;-</span> df[ df<span class="sc">$</span>Weekday <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Saturday"</span>,<span class="st">"Sunday"</span>), ]</span>
-<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a>weekends</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>weekends <span class="ot">&lt;-</span> df[ df<span class="sc">$</span>Weekday <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Saturday"</span>,<span class="st">"Sunday"</span>), ]</span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>weekends</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Date  Weekday
 1 2004-08-21 07:33:51 Saturday
-2 2008-07-12 21:23:08 Saturday
-3 2010-02-14 08:18:30   Sunday
-4 2018-12-23 23:11:45   Sunday</code></pre>
+5 2026-02-01 16:42:00   Sunday
+6 2026-05-17 01:23:23   Sunday</code></pre>
 </div>
 </div>
 <p>Finding items that are in the past (past being defined as the last time this document was knit).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>past <span class="ot">&lt;-</span> df<span class="sc">$</span>Date[ df<span class="sc">$</span>Date <span class="sc">&lt;</span> <span class="fu">Sys.time</span>() ]</span>
-<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>past</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a>past <span class="ot">&lt;-</span> df<span class="sc">$</span>Date[ df<span class="sc">$</span>Date <span class="sc">&lt;</span> <span class="fu">Sys.time</span>() ]</span>
+<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>past</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2004-08-21 07:33:51 EST" "2008-07-12 21:23:08 EST"
-[3] "2010-02-14 08:18:30 EST" "2018-12-23 23:11:45 EST"
-[5] "2019-02-01 16:42:00 EST" "2012-05-17 01:23:23 EST"
-[7] "2020-12-11 21:48:02 EST"</code></pre>
+<pre><code>[1] "2004-08-21 07:33:51 EST" "2010-07-12 21:23:08 EST"
+[3] "2022-02-14 08:18:30 EST" "2025-12-23 23:11:45 EST"
+[5] "2026-02-01 16:42:00 EST" "2026-05-17 01:23:23 EST"</code></pre>
 </div>
 </div>
 <p>Items that are during working hours</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a>work <span class="ot">&lt;-</span> df<span class="sc">$</span>Date[ <span class="fu">hour</span>(df<span class="sc">$</span>Date) <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">&amp;</span> <span class="fu">hour</span>(df<span class="sc">$</span>Date) <span class="sc">&lt;=</span> <span class="dv">17</span> ]</span>
-<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>work</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>work <span class="ot">&lt;-</span> df<span class="sc">$</span>Date[ <span class="fu">hour</span>(df<span class="sc">$</span>Date) <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">&amp;</span> <span class="fu">hour</span>(df<span class="sc">$</span>Date) <span class="sc">&lt;=</span> <span class="dv">17</span> ]</span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>work</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2019-02-01 16:42:00 EST"</code></pre>
+<pre><code>[1] "2026-02-01 16:42:00 EST"</code></pre>
 </div>
 </div>
 <p>And total range of values in days using normal arithmetic operations such as the minus operator.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(df<span class="sc">$</span>Date) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>Date)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(df<span class="sc">$</span>Date) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>Date)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 5956.593 days</code></pre>
+<pre><code>Time difference of 8147.593 days</code></pre>
 </div>
 </div>
 </section>

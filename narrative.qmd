@@ -74,7 +74,7 @@ And the *modulus operator*, which is the remainder after division:
 y %% x
 ```
 
-If you didn't know what this one is, don't worry.  The modulus is just the *remainder after division* like you did in grade school.  The above code means that *23 divided by 10 has a remainder of 3*.  I include it here just to highlight the fact that many of the operators that we will be working with in `R` are created by more than just a single symbol residing at the top row of your computer keyboard.  There are just too few symbols on the normal keyboard to represent the breadth of operators.  <mark>The authors of `R` have decided that using combinations of symbols to handle these and you will get used to them in not time at all.</mark>
+If you didn't know what this one is, don't worry.  The modulus is just the *remainder after division* like you did in grade school.  The above code means that *23 divided by 10 has a remainder of 3*.  I include it here just to highlight the fact that many of the operators that we will be working with in `R` are created by more than just a single symbol residing at the top row of your computer keyboard.  There are just too few symbols on the normal keyboard to represent the breadth of operators.  The authors of `R` have decided that using combinations of symbols to handle these situations—you will get used to them in time.
 
 ### Introspection & Coercion
 
@@ -164,7 +164,8 @@ nchar(phrase)
 
 The binary `+` operator has not been defined for objects of class `character`, which is understandable once we consider all the different ways we may want to put the values contained in the variables together.  If you try it, `R` will complain.
 
-```{r, error=TRUE}
+```{r}
+#| error: true
 name + sport
 ```
 
@@ -316,7 +317,7 @@ is.logical( dyer_has_good_jokes )
 ```
 
 
-<mark>Coercion of something else to a `Logical` is more case-specific.</mark>
+Coercion of a variable that is not a `logical` into a `Logical` is more case-specific.
 
 From `character` data.
 
@@ -371,9 +372,9 @@ This topic covers the basics of how we put together data based upon date and tim
 
 There are several challenges associated with working with date and time objects.  To those of us who are reading this with a background of how US time and date formats are read, we can easily interpret data objects as Month/Day/Year formats (e.g., "2/14/2018"), and is commonly represented in the kind of input data we work in `R` with as with a string of characters.  Dates and times are sticky things in data analysis because they do not work the way we think they should.  Here are some wrinkles:
 
-1. There are many types of calendars, <mark>we use the Julian calendar</mark>.  However, there are many other calendars that are in use that we may run into.  Each of these calendars has a different starting year (e.g., in the Assyrian calendar it is year 6770, it is 4718 in the Chinese calendar, 2020 in the Gregorian, and 1442 in the Islamic calendar).
+1. There are many types of calendars, we use the Julian calendar.  However, there are many other calendars that are in use that we may run into.  Each of these calendars has a different starting year (e.g., in the Assyrian calendar it is year 6770, it is 4718 in the Chinese calendar, 2020 in the Gregorian, and 1442 in the Islamic calendar).
 2. Western calendar has leap years (+1 day in February) as well as leap seconds because it is based on the rotation around the sun, others are based upon the lunar cycle and have other corrections. 
-3. On this planet, we have 24 different time zones. Some states (looking at you Arizona) don't feel it necessary to follow the other states around so they may be the same as PST some of the year and the same as MST the rest of the year.  The province of Newfoundland decided to be half-way between time zones so they are <mark>GMT-2:30</mark>. Some states have more than one time zone even if they are not large in size (hello Indiana).
+3. On this planet, we have 24 different time zones. Some states (looking at you Arizona) don't feel it necessary to follow the other states around so they may be the same as PST some of the year and the same as MST the rest of the year.  The province of Newfoundland decided to be half-way between time zones so they are GMT-2:30. Some states have more than one time zone even if they are not large in size (hello Indiana).
 4. Dates and time are made up of odd units, 60-seconds a minute, 60-minutes an hour, 24-hours a day, 7-days a week, 2-weeks a fortnight, 28,29,30,or 31-days in a month, 365 or 366 days in a year, 100 years in a century, etc.
 
 Fortunately, some smart programmers have figured this out for us already.  What they did was make the second as the base unit of time and designated 00:00:00 on 1 January 1970 as the *unix epoch*.  Time on most modern computers is measured from that starting point.  It is much easier to measure the difference between two points in time using the seconds since unix epoch *and then* translate it into one or more of these calendars than to deal with all the different calendars each time. So under the hood, much of the date and time issues are kept in terms of epoch seconds.  
@@ -389,7 +390,7 @@ unclass( Sys.time() )
 So for example, we can specify a date object as:
 
 ```{r}
-class_start <- as.Date("2021-01-15")
+class_start <- as.Date("2026-08-18")
 class_start
 ```
 
@@ -399,10 +400,10 @@ And it is of type:
 class( class_start )
 ```
 
-If you want to make a date from a different format, <mark>you need to specify what elements within the string representation using format codes.</mark>  These codes (and many more) can be found by looking at `?strptime`.
+If you want to make a date from a different format, you must specify which elements within the string representation you want represnted using specific formatting codes.  These codes (and many more) can be found by looking at `?strptime`.
 
 ```{r}
-class_end <- as.Date( "5/10/21", format = "%m/%d/%y")
+class_end <- as.Date( "12/03/26", format = "%m/%d/%y")
 class_end
 ```
 
@@ -412,8 +413,6 @@ I like to use some higher-level date functions from the `lubridate` library.   I
 ```{r}
 library( lubridate )
 ```
-
-
 
 Date objects can be put into vectors and sequences just like other objects.
 
@@ -447,12 +446,13 @@ To add time to the date objects, we need to specify both date and time specifica
 
 ```{r}
 df <- data.frame( Date = c("8/21/2004 7:33:51 AM",
-                           "7/12/2008 9:23:08 PM",
-                           "2/14/2010 8:18:30 AM",
-                           "12/23/2018 11:11:45 PM",
-                           "2/1/2019 4:42:00 PM",
-                           "5/17/2012 1:23:23 AM",
-                           "12/11/2020 9:48:02 PM") )
+                           "7/12/2010 9:23:08 PM",
+                           "2/14/2022 8:18:30 AM",
+                           "12/23/2025 11:11:45 PM",
+                           "2/1/2026 4:42:00 PM",
+                           "5/17/2026 1:23:23 AM",
+                           "12/11/2026 9:48:02 PM") )
+df
 summary( df )
 ```
 
@@ -495,7 +495,8 @@ class( df$Date )
 
 Now, we can ask *Date-like* questions about the data such as what day of the week was the first sample taken?
 
-```{r warning=FALSE }
+```{r}
+#| warning: false
 weekdays( df$Date[1] )
 ```
 
@@ -538,7 +539,7 @@ summary( df$Weekday )
 
 ### Filtering on Date Objects
 
-We can easily filter the content within a `data.frame` using some helper functions such as `hour()`, `minute()`, <mark>`weekday()`</mark>, etc.  Here are some examples including pulling out the weekends.
+We can easily filter the content within a `data.frame` using some helper functions such as `hour()`, `minute()`, `weekday()`, etc.  Here are some examples including pulling out the weekends.
 
 ```{r}
 weekends <- df[ df$Weekday %in% c("Saturday","Sunday"), ]
