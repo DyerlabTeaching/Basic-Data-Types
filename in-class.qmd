@@ -1,5 +1,5 @@
 ---
-title: "Data Types In Class Activity"
+title: "In Class Activity - Basic Data Types"
 author: "YOUR NAME HERE"
 format: html
 execute:
