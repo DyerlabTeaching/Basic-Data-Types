@@ -1,12 +1,9 @@
 ---
 title: "Data Types In Class Activity"
 author: "YOUR NAME HERE"
-format: 
-  html:
-    code-tools: true
-    toc: false
-    exec: true
-    echo: true
+format: html
+execute:
+  echo: true
 ---
 
 ## Overview & Objective
