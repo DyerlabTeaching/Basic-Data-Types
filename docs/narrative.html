@@ -543,7 +543,7 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>( <span class="fu">Sys.time</span>() )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1787592271</code></pre>
+<pre><code>[1] 1787598092</code></pre>
 </div>
 </div>
 <section id="basic-date-objects" class="level3">
@@ -657,10 +657,12 @@ Attaching package: 'lubridate'</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     Date          
- Length:7          
- Class :character  
- Mode  :character  </code></pre>
+<pre><code>        Date   
+ Length   : 7  
+ N.unique : 7  
+ N.blank  : 0  
+ Min.nchar:19  
+ Max.nchar:22  </code></pre>
 </div>
 </div>
 <p>Just like above, if we want to turn these into date and time objects we must be able to tell the parsing algorithm what elements are represented in each entry. There are many ways to make dates and time, 10/14 or 14 Oct or October 14 or Julian day 287, etc. These are designated by a format string where we indicate what element represents a <em>day</em> or <em>month</em> or <em>year</em> or <em>hour</em> or <em>minute</em> or <em>second</em>, etc. These are found by looking at the documentation for <code>?strptime</code>.</p>
