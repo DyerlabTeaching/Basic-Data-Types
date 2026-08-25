@@ -3,16 +3,20 @@ title: "Teaching Log"
 format: html
 ---
 
-## Fall Semester 2025
 
-### 08-28 Population Genetics
+## 2026.08.27
+- BIO516: 
+- ENVS543:  
 
+## 2026.08.25
+- BIOL516: Started working slides, got to [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/data-classes)
+
+
+### 2026.08.28 Population Genetics
 -   8-28: Quick run through of the slides
-
 -   9-2: Mostly did [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html) No one finished but I'm going to continue to Data Containers next lecture.
 
 ### Environmental Data Literacy
-
 -   8-28: Started slides up to [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/named-functions).
 -   9-2: Finished slides
 -   9-4: Worked all day on [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html).
