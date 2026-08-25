@@ -188,10 +188,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
-<p>If you didn’t know what this one is, don’t worry. The modulus is just the <em>remainder after division</em> like you did in grade school. The above code means that <em>23 divided by 10 has a remainder of 3</em>. I include it here just to highlight the fact that many of the operators that we will be working with in <code>R</code> are created by more than just a single symbol residing at the top row of your computer keyboard. There are just too few symbols on the normal keyboard to represent the breadth of operators. The authors of <code>R</code> have decided that using combinations of symbols to handle these situations—you will get used to them in time.</p>
+<p>If you didn’t know what this one is, don’t worry. The modulus is just the <em>remainder after division</em> like you did in grade school. The above code means that <em>23 divided by 10 has a remainder of 3</em>. I include it here just to highlight the fact that many of the operators that we will be working with in <code>R</code> are created by more than just a single symbol residing at the top row of your computer keyboard. There are just too few symbols on the normal keyboard to represent the breadth of operators. The authors of <code>R</code> decided that using combinations of symbols to handle a broader array of operators than are available on the common keyboard using this ‘wrapped’ context. This is a convention that you will get used to using.</p>
 </section>
-<section id="introspection-coercion" class="level3">
-<h3 class="anchored" data-anchor-id="introspection-coercion">Introspection &amp; Coercion</h3>
+<section id="introspection" class="level3">
+<h3 class="anchored" data-anchor-id="introspection">Introspection</h3>
 <p>The <code>class()</code> of a numeric type is (wait for it)… <code>numeric</code> (those <code>R</code> programmers are sure clever).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>( <span class="dv">42</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -472,8 +472,8 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 </div>
 </section>
 </section>
-<section id="introspection" class="level3">
-<h3 class="anchored" data-anchor-id="introspection">Introspection</h3>
+<section id="introspection-coercion" class="level3">
+<h3 class="anchored" data-anchor-id="introspection-coercion">Introspection &amp; Coercion</h3>
 <p><code>Logical</code> types have an introspection operator.</p>
 <p>&nbsp;</p>
 <div class="cell">
@@ -505,8 +505,8 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 </div>
 </div>
 </section>
-<section id="coercion" class="level3">
-<h3 class="anchored" data-anchor-id="coercion">Coercion</h3>
+<section id="coercion-from-other-variables" class="level3">
+<h3 class="anchored" data-anchor-id="coercion-from-other-variables">Coercion From Other Variables</h3>
 <p>Coercion of something else to a <code>Logical</code> is more case-specific.</p>
 <p>&nbsp;</p>
 <p>From <code>numeric</code> data:<br>
@@ -534,16 +534,16 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 <p>This topic covers the basics of how we put together data based upon date and time objects. For this, we will use the following data frame with a single column of data representing dates as they are written in the US.</p>
 <p>There are several challenges associated with working with date and time objects. To those of us who are reading this with a background of how US time and date formats are read, we can easily interpret data objects as Month/Day/Year formats (e.g., “2/14/2018”), and is commonly represented in the kind of input data we work in <code>R</code> with as with a string of characters. Dates and times are sticky things in data analysis because they do not work the way we think they should. Here are some wrinkles:</p>
 <ol type="1">
-<li>There are many types of calendars, we use the Julian calendar. However, there are many other calendars that are in use that we may run into. Each of these calendars has a different starting year (e.g., in the Assyrian calendar it is year 6770, it is 4718 in the Chinese calendar, 2020 in the Gregorian, and 1442 in the Islamic calendar).</li>
+<li>There are many types of calendars, we use the <strong>Gregorian</strong> calendar. However, there are many other calendars that are in use that we may run into. Each of these calendars has a different starting year (e.g., in the Assyrian calendar it is year 6770, it is 4718 in the Chinese calendar, 2020 in the Gregorian, and 1442 in the Islamic calendar).</li>
 <li>Western calendar has leap years (+1 day in February) as well as leap seconds because it is based on the rotation around the sun, others are based upon the lunar cycle and have other corrections.</li>
-<li>On this planet, we have 24 different time zones. Some states (looking at you Arizona) don’t feel it necessary to follow the other states around so they may be the same as PST some of the year and the same as MST the rest of the year. The province of Newfoundland decided to be half-way between time zones so they are GMT-2:30. Some states have more than one time zone even if they are not large in size (hello Indiana).</li>
+<li>On this planet, we have 24 different time zones. Some states (looking at you Arizona) don’t feel it necessary to follow the other states around so they may be the same as PST some of the year and the same as MST the rest of the year. The province of Newfoundland decided to be half-way between time zones so they are UTC−3:30. Some states have more than one time zone even if they are not large in size (hello Indiana).</li>
 <li>Dates and time are made up of odd units, 60-seconds a minute, 60-minutes an hour, 24-hours a day, 7-days a week, 2-weeks a fortnight, 28,29,30,or 31-days in a month, 365 or 366 days in a year, 100 years in a century, etc.</li>
 </ol>
 <p>Fortunately, some smart programmers have figured this out for us already. What they did was make the second as the base unit of time and designated 00:00:00 on 1 January 1970 as the <em>unix epoch</em>. Time on most modern computers is measured from that starting point. It is much easier to measure the difference between two points in time using the seconds since unix epoch <em>and then</em> translate it into one or more of these calendars than to deal with all the different calendars each time. So under the hood, much of the date and time issues are kept in terms of epoch seconds.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>( <span class="fu">Sys.time</span>() )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1787605128</code></pre>
+<pre><code>[1] 1787682821</code></pre>
 </div>
 </div>
 <section id="basic-date-objects" class="level3">
@@ -564,7 +564,7 @@ The stuff inside the parentheses are called <em>arguments</em> and are the data 
 <pre><code>[1] "Date"</code></pre>
 </div>
 </div>
-<p>If you want to make a date from a different format, you must specify which elements within the string representation you want represnted using specific formatting codes. These codes (and many more) can be found by looking at <code>?strptime</code>.</p>
+<p>If you want to make a date from a different format, you must specify which elements of the date/time object you want represented within the string using specific formatting codes. These codes (and many more) can be found by looking at <code>?strptime</code>. These are recognized standards that are used world-wide for these items.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>class_end <span class="ot">&lt;-</span> <span class="fu">as.Date</span>( <span class="st">"12/03/26"</span>, <span class="at">format =</span> <span class="st">"%m/%d/%y"</span>)</span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>class_end</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -657,12 +657,10 @@ Attaching package: 'lubridate'</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( df )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>        Date   
- Length   : 7  
- N.unique : 7  
- N.blank  : 0  
- Min.nchar:19  
- Max.nchar:22  </code></pre>
+<pre><code>     Date          
+ Length:7          
+ Class :character  
+ Mode  :character  </code></pre>
 </div>
 </div>
 <p>Just like above, if we want to turn these into date and time objects we must be able to tell the parsing algorithm what elements are represented in each entry. There are many ways to make dates and time, 10/14 or 14 Oct or October 14 or Julian day 287, etc. These are designated by a format string where we indicate what element represents a <em>day</em> or <em>month</em> or <em>year</em> or <em>hour</em> or <em>minute</em> or <em>second</em>, etc. These are found by looking at the documentation for <code>?strptime</code>.</p>
@@ -764,7 +762,7 @@ Attaching package: 'lubridate'</code></pre>
 </section>
 <section id="filtering-on-date-objects" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-on-date-objects">Filtering on Date Objects</h3>
-<p>We can easily filter the content within a <code>data.frame</code> using some helper functions such as <code>hour()</code>, <code>minute()</code>, <code>weekday()</code>, etc. Here are some examples including pulling out the weekends.</p>
+<p>We can easily filter the content within a <code>data.frame</code> using some helper functions such as <code>hour()</code>, <code>minute()</code>, <code>wday()</code>, etc. Here are some examples including pulling out the weekends.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>weekends <span class="ot">&lt;-</span> df[ df<span class="sc">$</span>Weekday <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Saturday"</span>,<span class="st">"Sunday"</span>), ]</span>
 <span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>weekends</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
