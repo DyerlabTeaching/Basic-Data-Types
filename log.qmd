@@ -4,13 +4,17 @@ format: html
 ---
 
 
+
 ## 2026.08.27
-- BIO516: 
-- ENVS543:  
+- BIO516: Finished overview of the section.  No homework, just review.  Moving on towards data containers next week.
+- ENVS543: Started on Data Types and got to the beginning of the dates seciton [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/helpful-library).
+
 
 ## 2026.08.25
 - BIOL516: Started working slides, got to [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/data-classes)
 
+
+## 2025
 
 ### 2026.08.28 Population Genetics
 -   8-28: Quick run through of the slides
@@ -21,11 +25,7 @@ format: html
 -   9-2: Finished slides
 -   9-4: Worked all day on [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html).
 
+
 ## Copy-Edit Log — Basic-Data-Types
 
-Tracks copy-editing passes over this module's `.qmd` documents. Clear-cut
-typos/grammar/spelling errors are corrected directly in the source. Items
-that need an author decision are left in place but wrapped in
-`<mark>...</mark>` so they show up highlighted in the rendered HTML.
-
-### narrative.qmd — 2026-08-15
+Tracks copy-editing passes over this module's `.qmd` documents. Clear-cut typos/grammar/spelling errors are corrected directly in the source. Items that need an author decision are left in place but wrapped in `<mark>...</mark>` so they show up highlighted in the rendered HTML.
