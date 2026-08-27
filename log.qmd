@@ -3,29 +3,21 @@ title: "Teaching Log"
 format: html
 ---
 
-
-
 ## 2026.08.27
 - BIO516: Finished overview of the section.  No homework, just review.  Moving on towards data containers next week.
 - ENVS543: Started on Data Types and got to the beginning of the dates seciton [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/helpful-library).
 
-
 ## 2026.08.25
 - BIOL516: Started working slides, got to [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/data-classes)
 
+## 2026.09.04
+- ENVS543: Worked all day on [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html).
 
-## 2025
+## 2026.09.02
+- BIOL516: Mostly did [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html) No one finished but I'm going to continue to Data Containers next lecture.
+- ENVS543: Finished slides
 
-### 2026.08.28 Population Genetics
--   8-28: Quick run through of the slides
--   9-2: Mostly did [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html) No one finished but I'm going to continue to Data Containers next lecture.
+## 2026.08.28 
+- BIOL516: Quick run through of the slides
+- ENVS543: Started slides up to [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/named-functions).
 
-### Environmental Data Literacy
--   8-28: Started slides up to [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/named-functions).
--   9-2: Finished slides
--   9-4: Worked all day on [In Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class_data_types.html).
-
-
-## Copy-Edit Log — Basic-Data-Types
-
-Tracks copy-editing passes over this module's `.qmd` documents. Clear-cut typos/grammar/spelling errors are corrected directly in the source. Items that need an author decision are left in place but wrapped in `<mark>...</mark>` so they show up highlighted in the rendered HTML.
