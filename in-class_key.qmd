@@ -38,28 +38,32 @@ What is your favorite number?  Create a variable named `myFavoriteNumber` and as
 
 
 ```{r}
-
+myFavoriteNumber <- 42
 ```
 
 
 The ancient Egyptians were quite cleaver at engineering and building things.  The [Rhind Papyrus](https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus), which dates to 1650 BCE, indicates that they estimated the ratio between the circumference and the diameter of a circle to be 256 divided by 81.  Create a variable named `Rhind_Pi` that estimates the papyrus version of $\pi$.  Show it.
 
 ```{r}
-
+Rhind_Pi <- 256/81
+Rhind_Pi
 ```
 
 Compare it to the value of the real version of pi (in `R`, we use `pi` a built-in variable.) Mathematically is the previous version greater or less than what we use now? Show it.
 
 ```{r}
-
+diff <- pi - Rhind_Pi 
+diff
 ```
 
+*It is larger in magnitude than our current version of pi*
 
 
 The function `sqrt()` provides you the square root of a number. Assign a variable named `root2` to hold the value of `sqrt(2)`.  Show the value of this variable and its value by printing it out.
 
 ```{r}
-
+root2 <- sqrt(2)
+root2
 ```
 
 
@@ -69,6 +73,7 @@ What is the value contained in the variable below named `sqrOfNegative2`?  Is th
 sqrOfNegative2 <- -2^2
 ```
 
+**The order of operations here has the exponent operating before the negation operator.  See [this](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/order-of-operations-top-to-bottom) slide for a reminder.**
 
 
 ### Character Data
@@ -76,28 +81,31 @@ sqrOfNegative2 <- -2^2
 Create variables for your first and last names (and give them proper variable names).
 
 ```{r}
-
+first <- "Rodney"
+last <- "Dyer"
 ```
 
 
 Combine these variables into a single variable `fullName` using `paste()` and then show the value of the variable.
 
 ```{r}
-
+fullName <- paste(first,last)
+fullName
 ```
 
 
 Create a new variable, `properName`, which is your last name, a comma and space, followed by your first name (see the help for `paste()` and in particular the `sep` argument.)  Use the variables above instead of writing out the letters for your names.  Show it.
 
 ```{r}
-
+paste( last, first, sep=", " ) -> properName 
+properName
 ```
 
 
 The function `nchar()` returns the number of characters in a character variable.  Use it on your `properName`.  How many characters are in your name?
 
 ```{r}
-
+nchar( properName )
 ```
 
 
@@ -106,7 +114,8 @@ The function `nchar()` returns the number of characters in a character variable.
 Create the variables `trueResult` and `falseResult` and assign them the approprite values.
 
 ```{r}
-
+trueResult <- TRUE
+falseResult <- FALSE
 ```
 
 
@@ -116,35 +125,45 @@ Using the variables `trueResult` and `falseResult` to demonstrate logical operat
 # there are many combinations of how you could show these, here is one.  
 #   I'm just looking for your use of ==, !=, and !
 
+trueResult == falseResult
+trueResult != falseResult
+!trueResult 
 ```
 
 
 Using the variables `trueResult` and `falseResult` demonstrate AND operator in R for all pairwise combinations (e.g, for the and operator, show how to evaluate `trueResult`/`trueResult`, `trueResult`/`falseResult`, `falseResult`/`trueResult`, and `falseResult`/`falseResult`)
 
 ```{r}
-
+trueResult && trueResult
+trueResult && falseResult
+falseResult && trueResult
+falseResult && falseResult
 ```
 
 Do the same as the previous question for the appropriate OR operator.
 
 ```{r}
-
+trueResult | trueResult
+trueResult | falseResult
+falseResult | trueResult
+falseResult | falseResult
 ```
 
 
 In the example above for the square root, the variable `root2` has the square root of the number $2$.  Create a variable called `two` that multiples `root2 * root2`.  
 
 ```{r}
-
+two <- root2 * root2
 ```
 
 
-Does the new variable if you use the equality operator, `two` equal `2`?  Print it out AND test for equality using the quality operator `==`.  What gives?
+Does the new variable if you use the equality operator, `two` equal `2` (test using equality operator do not look at it).
 
 ```{r}
-
+two == 2
 ```
 
+**This is a can of worms, take your best shot at it and we will discuss.**
 
 ### Dates
 
@@ -152,7 +171,8 @@ For these next questions, I'm going to use the library `lubridate` like we did i
 
 ```{r}
 library( lubridate )
-
+student <- mdy("01/15/1990", tz="US/Pacific")
+student
 ```
 
 
@@ -160,8 +180,9 @@ How many days was it between then and now?  Assign this to a variable named `day
 
 
 ```{r}
-
+now() - student  -> daysAsStudent
 ```
 
+**I have been a student for `r prettyNum(daysAsStudent, big.mark=",", digits=2)` days.**
 
 
