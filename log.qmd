@@ -3,6 +3,9 @@ title: "Teaching Log"
 format: html
 ---
 
+## 2026.09.01
+- ENVS543: Finished slides and deployed in-class activity as 'homework'
+
 ## 2026.08.27
 - BIO516: Finished overview of the section.  No homework, just review.  Moving on towards data containers next week.
 - ENVS543: Started on Data Types and got to the beginning of the dates seciton [here](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html#/helpful-library).
