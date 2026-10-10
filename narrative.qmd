@@ -1,6 +1,6 @@
 ---
 title: "Basic Data Types"
-format: html
+format: dyerlab-narrative-html
 ---
 
 ![Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/photos/8OyKWQgBsKQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](media/markus-spiske-8OyKWQgBsKQ-unsplash.jpg)

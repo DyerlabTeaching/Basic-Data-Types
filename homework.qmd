@@ -1,7 +1,7 @@
 ---
 title: "Basic Data Types Homework"
 author: "YOUR NAME HERE"
-format: html
+format: dyerlab-html
 ---
 
 ## Homework

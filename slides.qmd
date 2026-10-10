@@ -2,8 +2,8 @@
 title: "Basic Data Types"
 subtitle: "&nbsp;"
 author: Rodney Dyer, PhD
-format: 
-  revealjs:
+format:
+  dyerlab-revealjs:
     background-transition: fade
     theme: default
     chalkboard: true
@@ -705,7 +705,7 @@ On `r format(days21K,"%A, %B %d, %Y")` Dyer will be 21,000 days old. 🍻
 
 ## More Date Operations
 
-There are a lot more operations you can do with date and time objects.  I recommend you look at the [Cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) in the repository for the `lubridate` library.
+There are a lot more operations you can do with date and time objects.  I recommend you look at the [Cheatsheet](https://dyerlabteaching.github.io/Basic-Data-Types/media/R_lubridate.pdf) in the repository for the `lubridate` library.
 
 
 

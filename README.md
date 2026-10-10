@@ -30,7 +30,7 @@ To be effective at analyzing a broad range of objects, we need appropriate repre
 - An [In-Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class.html) for interactive work on basic data types and to give some confidence in the practitioner.
 - A longer [narrative](https://dyerlabteaching.github.io/Basic-Data-Types/narrative.html) on the topic.
 - A general [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) for basic `R` functionality.
-- Another [cheatsheet](https://github.com/DyerlabTeaching/Basic-Data-Types/raw/main/R_lubridate.pdf) for the library `lubridate`.
+- Another [cheatsheet](https://dyerlabteaching.github.io/Basic-Data-Types/media/R_lubridate.pdf) for the library `lubridate`.
 - A [cheatsheet](https://rstudio.github.io/cheatsheets/sf.pdf) for the `sf` library.
 - A [webpage](https://dyerlab.github.io/gstudio/) covering the `gstudio` package.
 
