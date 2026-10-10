@@ -86,7 +86,7 @@ class( 42 )
 
 <div class="box-yellow">In this case `class` is the name of the function and there are one or more things we pass to that function.  These **must** be enclosed in the parentheses associated with `class`.  The parentheses **must** be *right next to* the name of the function. If you put a space between the word `class` and the parentheses, it may not work the way you would like it to.  You've been warned.
 
-The stuff inside the parentheses are called *arguments* and are the data that we pass to the function itself. In this case we pass a value or variable to the `class` function and it does its magic and tells us what kind of data type it is.  Many functions have several arguments that can be passed to them, some optional, some not.  We will get more into that on the lecture covering [Functions](https://dyerlab.github.io/ENVS-Lectures/functions/slides.html).</div>
+The stuff inside the parentheses are called *arguments* and are the data that we pass to the function itself. In this case we pass a value or variable to the `class` function and it does its magic and tells us what kind of data type it is.  Many functions have several arguments that can be passed to them, some optional, some not.  We will get more into that later in the course.</div>
 
 It is also possible to inquire if a particular variable is of a certain class.  This is done by using the `is.*` set of functions.
 
