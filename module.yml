@@ -1,0 +1,15 @@
+title: "Basic Data Types"
+repo: Basic-Data-Types
+image:
+  file: media/module_image.jpg
+  alt: "A temperate forest in Virginia in the fall, with golden leaves."
+epigraph: >-
+  When we work with an analysis language, we need to be very precise
+  about how we represent the data we collect.  R is a general analysis
+  language and has a wide range of native data types and can easily be
+  expanded using the package system.
+resources:
+  - "A general [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) for basic `R` functionality."
+  - "Another [cheatsheet](https://dyerlabteaching.github.io/Basic-Data-Types/media/R_lubridate.pdf) for the library `lubridate`."
+  - "A [cheatsheet](https://rstudio.github.io/cheatsheets/sf.pdf) for the `sf` library."
+  - "A [webpage](https://dyerlab.github.io/gstudio/) covering the `gstudio` package."

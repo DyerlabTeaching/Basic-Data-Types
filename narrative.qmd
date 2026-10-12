@@ -3,9 +3,13 @@ title: "Basic Data Types"
 format: dyerlab-narrative-html
 ---
 
-![Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/photos/8OyKWQgBsKQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](media/markus-spiske-8OyKWQgBsKQ-unsplash.jpg)
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
 
+![](media/module_image.jpg){fig-alt="A temperate forest in Virginia in the fall, with golden leaves."}
 
+> When we work with an analysis language, we need to be very precise about how we represent the data we collect.  R is a general analysis language and has a wide range of native data types and can easily be expanded using the package system.
+
+<!-- END module:header -->
 
 ## Missing Data
 
@@ -16,7 +20,6 @@ The most fundamental type of data in `R` is  data that does not exist!  Missing 
 ```{r}
 x <- NA
 ```
-
 
 
 ## Numerical Data
@@ -110,8 +113,6 @@ y <- as.numeric( x )
 is.numeric( y )
 y
 ```
-
-
 
 
 ## Character Data
@@ -220,7 +221,6 @@ library( stringr )
 ```
 
 
-
 Here is an example using the space character to pull it apart into words.
 
 ```{r}
@@ -256,9 +256,6 @@ str_replace_all(corpus, "California", "Virginia")
 There is a lot more fun stuff to do with string based data.
 
 
-
-
-
 ## Logical Data
 
 
@@ -286,8 +283,6 @@ The `negation` operator
 
 
 &nbsp;
-
-
 
 
 ### The Binary Operators
@@ -357,11 +352,6 @@ as.logical(0)
 ```{r}
 as.logical( 323 )
 ```
-
-
-
-
-
 
 
 ## Dates
@@ -439,7 +429,6 @@ days_of_week[ x ]
 Since we did not specify a time, things like `hour()` and `minute()` do not provide any usable information.
 
 
-
 ### Dates & Times
 
 To add time to the date objects, we need to specify both date and time specifically.  Here are some example data: 
@@ -478,7 +467,6 @@ format <- "%m/%d/%Y %I:%M:%S %p"
 ```
 
 Now, we can convert the character string in the data frame to a date and time object.  
-
 
 
 ### Lubridate
@@ -534,7 +522,6 @@ df$Weekday <- factor( df$Weekday,
                         )
 summary( df$Weekday )
 ```
-
 
 
 ### Filtering on Date Objects

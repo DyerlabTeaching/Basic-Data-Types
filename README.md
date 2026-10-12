@@ -1,6 +1,10 @@
 # Basic Data Types
 
-![Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/photos/8OyKWQgBsKQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>](https://unsplash.com/photos/8OyKWQgBsKQ/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8ZGF0YSUyMHR5cGVzfGVufDB8fHx8MTY2MjQ3Njc2MQ&force=true&w=640)
+<!-- BEGIN module:header — generated from module.yml; edit that, not this -->
+
+![A temperate forest in Virginia in the fall, with golden leaves.](https://dyerlabteaching.github.io/Basic-Data-Types/media/module_image.jpg)
+
+<!-- END module:header -->
 
 ## Impetus
 
@@ -26,13 +30,17 @@ To be effective at analyzing a broad range of objects, we need appropriate repre
 
 ## Content
 
-- [Slides](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html) presented on the video.
-- An [In-Class Activity](https://dyerlabteaching.github.io/Basic-Data-Types/in-class.html) for interactive work on basic data types and to give some confidence in the practitioner.
-- A longer [narrative](https://dyerlabteaching.github.io/Basic-Data-Types/narrative.html) on the topic.
+<!-- BEGIN module:resources — generated from module.yml; edit that, not this -->
+
+- The [slides](https://dyerlabteaching.github.io/Basic-Data-Types/slides.html) for this topic.
+- A longer [narrative](https://dyerlabteaching.github.io/Basic-Data-Types/narrative.html) that goes into more depth.
+- An [in-class](https://dyerlabteaching.github.io/Basic-Data-Types/in-class.html) activity.
 - A general [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/base-r.pdf) for basic `R` functionality.
 - Another [cheatsheet](https://dyerlabteaching.github.io/Basic-Data-Types/media/R_lubridate.pdf) for the library `lubridate`.
 - A [cheatsheet](https://rstudio.github.io/cheatsheets/sf.pdf) for the `sf` library.
 - A [webpage](https://dyerlab.github.io/gstudio/) covering the `gstudio` package.
+
+<!-- END module:resources -->
 
 ## Assessment
 
