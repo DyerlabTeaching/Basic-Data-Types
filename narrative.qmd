@@ -11,7 +11,7 @@ format: dyerlab-narrative-html
 
 <!-- END module:header -->
 
-## Missing Data
+## Missing Data {.application}
 
 > The Absence of Data
 
@@ -22,7 +22,7 @@ x <- NA
 ```
 
 
-## Numerical Data
+## Numerical Data {.application}
 
 > Numerical data contains all numerical representations.
 
@@ -115,7 +115,7 @@ y
 ```
 
 
-## Character Data
+## Character Data {.application}
 
 
 > Character data represents textual content.
@@ -256,7 +256,7 @@ str_replace_all(corpus, "California", "Virginia")
 There is a lot more fun stuff to do with string based data.
 
 
-## Logical Data
+## Logical Data {.application}
 
 
 Logical data consists of two **mutually exclusive** states: `TRUE` or `FALSE`
@@ -354,7 +354,7 @@ as.logical( 323 )
 ```
 
 
-## Dates
+## Dates {.application}
 
 > Time is the next dimension.
 
